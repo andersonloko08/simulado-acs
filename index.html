@@ -2,30 +2,43 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Plataforma ACS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plataforma de Estudo ACS</title>
+
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-    <h2>📘 Plataforma de Estudo ACS</h2>
+    📘 Plataforma de Estudo ACS
 </header>
 
-<div class="container">
+<main class="container">
 
-<div id="dashboard">
-    <button onclick="iniciarSimulado()">▶ Gerar Simulado</button>
+    <!-- TELA INICIAL -->
+    <section id="dashboard">
 
-    <div id="stats"></div>
-</div>
+        <div class="start-box">
+            <h2>Bem-vinda ao Simulado</h2>
+            <p>Clique para gerar um novo simulado aleatório</p>
 
-<div id="simulado" style="display:none;"></div>
+            <button onclick="iniciarSimulado()">
+                ▶ Gerar Simulado
+            </button>
+        </div>
 
-<div id="resultado"></div>
+        <div id="stats"></div>
 
-</div>
+    </section>
+
+    <!-- SIMULADO -->
+    <section id="simulado" style="display:none;"></section>
+
+    <!-- RESULTADO -->
+    <section id="resultado"></section>
+
+</main>
 
 <script src="app.js"></script>
 

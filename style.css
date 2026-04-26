@@ -1,47 +1,158 @@
-body {
-    font-family: Arial;
+/* RESET BÁSICO */
+* {
     margin: 0;
-    background: #eef2f7;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* BASE */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f3f4f6;
+    color: #111827;
+}
+
+/* HEADER */
 header {
     background: #0f172a;
     color: white;
-    padding: 15px;
+    padding: 16px;
     text-align: center;
+    font-weight: 600;
 }
 
+/* CONTAINER PRINCIPAL */
 .container {
     max-width: 900px;
     margin: auto;
     padding: 20px;
 }
 
-button {
-    padding: 12px 16px;
+/* =========================
+   DASHBOARD (TELA INICIAL)
+========================= */
+
+#dashboard {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* CARD CENTRAL */
+.start-box {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.start-box h2 {
+    margin-bottom: 10px;
+}
+
+.start-box p {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+/* BOTÃO PRINCIPAL */
+.start-box button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
     background: #2563eb;
     color: white;
-    border: none;
-    border-radius: 8px;
+    font-size: 15px;
     cursor: pointer;
-    margin: 5px;
+    transition: 0.2s;
 }
+
+.start-box button:hover {
+    background: #1d4ed8;
+}
+
+/* =========================
+   QUESTÕES
+========================= */
 
 .questao {
     background: white;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 10px;
+    border-radius: 12px;
+    padding: 18px;
+    margin: 16px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    border-left: 4px solid #2563eb;
 }
 
-.menu {
-    position: fixed;
-    right: 10px;
-    top: 80px;
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
+.questao h4 {
+    margin-bottom: 10px;
 }
+
+.questao p {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+/* ALTERNATIVAS */
+.questao label {
+    display: block;
+    padding: 10px;
+    margin: 6px 0;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.questao label:hover {
+    background: #eef2ff;
+}
+
+/* BOTÃO DA QUESTÃO */
+.questao button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background: #2563eb;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.questao button:hover {
+    background: #1d4ed8;
+}
+
+/* FEEDBACK */
+.resposta {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.correto {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.errado {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* =========================
+   RESULTADO FINAL (POPUP)
+========================= */
 
 .popup {
     position: fixed;
@@ -49,7 +160,13 @@ button {
     left: 50%;
     transform: translateX(-50%);
     background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 320px;
+}
+
+.popup h2 {
+    margin-bottom: 10px;
 }
