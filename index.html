@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Simulado ACS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+    font-family: Arial;
+    background: #eef2f7;
+    margin: 0;
+}
+
+header {
+    background: #111827;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-top: 40px;
+}
+
+button {
+    padding: 12px 18px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+.questao {
+    background: white;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>📘 Simulado ACS</h2>
+</header>
+
+<div class="container">
+
+<!-- TELA INICIAL -->
+<div id="home" class="card">
+    <h3>Bem-vinda ao Simulado</h3>
+    <p>Escolha como deseja iniciar</p>
+
+    <button onclick="gerarSimulado()">🔀 Gerar novo simulado</button>
+    <button onclick="iniciarAuto()">▶ Iniciar automaticamente</button>
+</div>
+
+<!-- SIMULADO -->
+<div id="simulado" style="display:none;"></div>
+
+</div>
+
+<script>
+
+let questoes = [];
+
+async function carregar() {
+    const res = await fetch("simulado_completo.json");
+    const data = await res.json();
+    questoes = data.questoes;
+}
+
+function shuffle(arr) {
+    return arr.sort(() => Math.random() - 0.5);
+}
+
+function iniciarAuto() {
+    gerarSimulado();
+}
+
+async function gerarSimulado() {
+
+    if (questoes.length === 0) {
+        await carregar();
+    }
+
+    document.getElementById("home").style.display = "none";
+    document.getElementById("simulado").style.display = "block";
+
+    let selecionadas = shuffle([...questoes]).slice(0, 40);
+
+    let html = "";
+
+    selecionadas.forEach((q, i) => {
+
+        html += `
+        <div class="questao">
+            <h4>Questão ${i+1}</h4>
+            <p>${q.pergunta}</p>
+        `;
+
+        for (let l in q.alternativas) {
+            html += `
+                <label>
+                    <input type="radio" name="q${i}" value="${l}">
+                    ${l}) ${q.alternativas[l]}
+                </label><br>
+            `;
+        }
+
+        html += `
+            <button onclick="corrigir(${i}, '${q.resposta}', \`${q.comentario || ""}\`)">
+                Enviar resposta
+            </button>
+
+            <div id="res${i}"></div>
+        </div>
+        `;
+    });
+
+    document.getElementById("simulado").innerHTML = html;
+}
+
+function corrigir(i, correta, comentario) {
+    let opcoes = document.getElementsByName("q" + i);
+    let marcada = null;
+
+    for (let o of opcoes) {
+        if (o.checked) marcada = o.value;
+    }
+
+    let res = document.getElementById("res" + i);
+
+    if (marcada === correta) {
+        res.innerHTML = "✅ Correto<br><br>" + comentario;
+    } else {
+        res.innerHTML = "❌ Errado<br>✔ Correta: " + correta + "<br><br>" + comentario;
+    }
+}
+
+</script>
+
+</body>
+</html>
