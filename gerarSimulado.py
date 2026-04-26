@@ -1,7 +1,7 @@
 import json
 
 ARQUIVO_JSON = "simulado_completo.json"
-ARQUIVO_HTML = "simulado_interativo.html"
+ARQUIVO_HTML = "index.html"
 QTD_QUESTOES = 40
 
 
