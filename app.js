@@ -312,13 +312,39 @@ window.finish = function() {
 
     let acertos = 0;
     const total = simuladoAtual.length;
+    let subjectStats = {};
+
+    // Iniciar contadores
+    simuladoAtual.forEach(q => {
+        if (!subjectStats[q.disciplina]) {
+            subjectStats[q.disciplina] = { total: 0, correct: 0 };
+        }
+        subjectStats[q.disciplina].total++;
+    });
 
     for (const key in respostasUsuario) {
         const state = respostasUsuario[key];
+        const q = simuladoAtual[key];
         if (state.selecionada === state.correta) {
             acertos++;
+            subjectStats[q.disciplina].correct++;
         }
     }
+
+    // Montar HTML do detalhamento por matéria
+    let breakdownHtml = '<h4 style="margin: 0 0 10px 0; font-size: 0.9rem; color: var(--text);">Desempenho por Disciplina:</h4>';
+    for (const [subj, stats] of Object.entries(subjectStats)) {
+        const perc = Math.round((stats.correct / stats.total) * 100) || 0;
+        let color = perc >= 50 ? 'var(--success)' : 'var(--danger)';
+        breakdownHtml += `
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 0.85rem; padding-bottom: 5px; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                <span>${subj}</span>
+                <span style="color: ${color}; font-weight: bold;">${stats.correct}/${stats.total} (${perc}%)</span>
+            </div>
+        `;
+    }
+    const breakdownEl = document.getElementById('subject-breakdown');
+    if (breakdownEl) breakdownEl.innerHTML = breakdownHtml;
 
     const percentage = total > 0 ? Math.round((acertos / total) * 100) : 0;
 
