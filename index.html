@@ -3,40 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plataforma de Estudo ACS</title>
-
+<title>Simulado ACS</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    📘 Plataforma de Estudo ACS
+<header class="topbar">
+    📘 Plataforma de Simulado ACS
 </header>
 
-<main class="container">
+<main class="app">
 
     <!-- TELA INICIAL -->
-    <section id="dashboard">
+    <section id="home" class="screen active">
 
-        <div class="start-box">
-            <h2>Bem-vinda ao Simulado</h2>
-            <p>Clique para gerar um novo simulado aleatório</p>
+        <div class="card-center">
 
-            <button onclick="iniciarSimulado()">
+            <h1>Bem-vinda</h1>
+            <p>Gere um simulado aleatório com 40 questões</p>
+
+            <button onclick="startQuiz()">
                 ▶ Gerar Simulado
             </button>
-        </div>
 
-        <div id="stats"></div>
+            <div id="stats"></div>
+
+        </div>
 
     </section>
 
-    <!-- SIMULADO -->
-    <section id="simulado" style="display:none;"></section>
+    <!-- QUIZ -->
+    <section id="quiz" class="screen"></section>
 
     <!-- RESULTADO -->
-    <section id="resultado"></section>
+    <section id="result"></section>
 
 </main>
 

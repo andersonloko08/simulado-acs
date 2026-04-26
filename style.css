@@ -9,79 +9,76 @@
 }
 
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: Arial, sans-serif;
     background: #eef2f7;
     color: #111827;
-    line-height: 1.5;
 }
 
 /* =========================
    HEADER
 ========================= */
 
-header {
+.topbar {
     background: #0f172a;
     color: white;
-    padding: 18px;
+    padding: 16px;
     text-align: center;
-    font-size: 18px;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 /* =========================
-   CONTAINER
+   APP LAYOUT
 ========================= */
 
-.container {
-    max-width: 920px;
+.app {
+    max-width: 900px;
     margin: auto;
     padding: 20px;
 }
 
+/* SCREENS */
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
 /* =========================
-   DASHBOARD (START)
+   HOME CENTRALIZADO
 ========================= */
 
-#dashboard {
-    min-height: 75vh;
+.card-center {
+    height: 75vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.start-box {
-    background: white;
-    padding: 32px;
-    border-radius: 16px;
-    width: 100%;
-    max-width: 460px;
+    gap: 16px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-.start-box h2 {
-    font-size: 20px;
-    margin-bottom: 8px;
+.card-center h1 {
+    font-size: 22px;
 }
 
-.start-box p {
-    font-size: 14px;
+.card-center p {
     color: #6b7280;
-    margin-bottom: 20px;
 }
 
-.start-box button {
-    width: 100%;
-    padding: 14px;
+/* BOTÃO PRINCIPAL */
+button {
+    padding: 14px 18px;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     background: #2563eb;
     color: white;
-    font-size: 15px;
     cursor: pointer;
+    font-size: 15px;
 }
 
-.start-box button:hover {
+button:hover {
     background: #1d4ed8;
 }
 
@@ -89,132 +86,79 @@ header {
    QUESTÃO (ESTILO PROVA REAL)
 ========================= */
 
-.questao {
+.question {
     background: white;
-    border-radius: 14px;
-    padding: 22px;
-    margin: 18px 0;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    padding: 20px;
+    margin: 16px 0;
+    border-radius: 12px;
     border-left: 5px solid #2563eb;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
 }
 
-/* NÚMERO DA QUESTÃO */
-.questao h4 {
+.question h3 {
     font-size: 14px;
     color: #2563eb;
     margin-bottom: 10px;
 }
 
-/* ENUNCIADO */
-.questao p {
-    font-size: 15px;
+.question p {
     margin-bottom: 14px;
-    color: #111827;
+    line-height: 1.5;
 }
 
-/* =========================
-   ALTERNATIVAS (MODO PROVA)
-========================= */
-
-.questao label {
+/* ALTERNATIVAS */
+.option {
     display: flex;
-    align-items: flex-start;
     gap: 10px;
-
-    padding: 12px 14px;
+    padding: 12px;
     margin: 8px 0;
-
-    background: #f9fafb;
     border: 1px solid #e5e7eb;
     border-radius: 10px;
-
+    background: #f9fafb;
     cursor: pointer;
-    transition: 0.15s;
-    font-size: 14px;
 }
 
-/* hover estilo concurso */
-.questao label:hover {
+.option:hover {
     border-color: #2563eb;
     background: #eff6ff;
 }
 
-/* radio mais limpo */
-.questao input {
-    margin-top: 3px;
-}
-
-/* =========================
-   BOTÃO RESPOSTA
-========================= */
-
-.questao button {
-    margin-top: 12px;
+/* BOTÃO DA QUESTÃO */
+.question button {
     width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    background: #2563eb;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
+    margin-top: 10px;
 }
 
-.questao button:hover {
-    background: #1d4ed8;
+/* FEEDBACK */
+.feedback {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
 }
 
-/* =========================
-   FEEDBACK
-========================= */
-
-.resposta {
-    margin-top: 12px;
-    padding: 12px;
-    border-radius: 10px;
-    font-size: 14px;
-}
-
-.correto {
+.ok {
     background: #dcfce7;
     color: #166534;
-    border: 1px solid #86efac;
 }
 
-.errado {
+.bad {
     background: #fee2e2;
     color: #991b1b;
-    border: 1px solid #fca5a5;
 }
 
 /* =========================
-   POPUP RESULTADO
+   RESULTADO FINAL
 ========================= */
 
-.popup {
+#result {
     position: fixed;
-    top: 18%;
+    top: 20%;
     left: 50%;
     transform: translateX(-50%);
-
     background: white;
     padding: 24px;
-    border-radius: 16px;
-
-    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
     text-align: center;
-    width: 340px;
-}
-
-.popup h2 {
-    margin-bottom: 10px;
-}
-
-/* =========================
-   MELHORIA GERAL DE LEITURA
-========================= */
-
-.questao + .questao {
-    margin-top: 22px;
+    display: none;
 }

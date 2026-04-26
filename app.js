@@ -5,16 +5,20 @@ fetch("simulado_completo.json")
     .then(r => r.json())
     .then(data => {
         questoes = data.questoes;
-        mostrarStats();
+        loadStats();
     });
 
 function shuffle(arr) {
     return arr.sort(() => Math.random() - 0.5);
 }
 
-function iniciarSimulado() {
-    document.getElementById("dashboard").style.display = "none";
-    document.getElementById("simulado").style.display = "block";
+/* =========================
+   INICIAR SIMULADO
+========================= */
+
+function startQuiz() {
+    document.getElementById("home").classList.remove("active");
+    document.getElementById("quiz").classList.add("active");
 
     let selecionadas = shuffle([...questoes]).slice(0, 40);
     respostas = selecionadas.map(q => q.resposta);
@@ -24,102 +28,92 @@ function iniciarSimulado() {
     selecionadas.forEach((q, i) => {
 
         html += `
-        <div class="questao" id="q${i}">
-            <h4>Questão ${i+1}</h4>
+        <div class="question">
+            <h3>Questão ${i+1}</h3>
             <p>${q.pergunta}</p>
         `;
 
-        for (let l in q.alternativas) {
+        for (let k in q.alternativas) {
             html += `
-                <label>
-                    <input type="radio" name="q${i}" value="${l}">
-                    ${l}) ${q.alternativas[l]}
-                </label><br>
+            <label class="option">
+                <input type="radio" name="q${i}" value="${k}">
+                <span>${k}) ${q.alternativas[k]}</span>
+            </label>
             `;
         }
 
         html += `
-            <button onclick="corrigir(${i}, '${q.resposta}', \`${q.comentario || ""}\`)">
-                Enviar
+            <button onclick="check(${i}, '${q.resposta}', \`${q.comentario || ""}\`)">
+                Enviar resposta
             </button>
 
-            <div id="res${i}"></div>
+            <div id="f${i}"></div>
         </div>
         `;
     });
 
-    html += `
-        <button onclick="finalizar()">📊 Finalizar Simulado</button>
-    `;
-
-    document.getElementById("simulado").innerHTML = html;
+    document.getElementById("quiz").innerHTML = html;
 }
 
-function corrigir(i, correta, comentario) {
-    let opcoes = document.getElementsByName("q" + i);
-    let marcada = null;
+/* =========================
+   CORREÇÃO
+========================= */
 
-    for (let o of opcoes) {
-        if (o.checked) marcada = o.value;
+function check(i, correta, comentario) {
+    let opts = document.getElementsByName("q" + i);
+    let marked = null;
+
+    for (let o of opts) {
+        if (o.checked) marked = o.value;
     }
 
-    let res = document.getElementById("res" + i);
+    let box = document.getElementById("f" + i);
 
-    if (marcada === correta) {
-        res.innerHTML = "✅ Correto<br>" + comentario;
+    if (!marked) return;
+
+    if (marked === correta) {
+        box.innerHTML = `<div class="feedback ok">✅ Correto<br>${comentario}</div>`;
     } else {
-        res.innerHTML = "❌ Errado<br>✔ Correta: " + correta + "<br>" + comentario;
+        box.innerHTML = `<div class="feedback bad">❌ Errado<br>✔ Correta: ${correta}<br>${comentario}</div>`;
     }
 }
 
-function finalizar() {
+/* =========================
+   FINALIZAR
+========================= */
+
+function finish() {
     let acertos = 0;
-    let total = respostas.length;
 
-    for (let i = 0; i < total; i++) {
-        let opcoes = document.getElementsByName("q" + i);
+    for (let i = 0; i < respostas.length; i++) {
+        let opts = document.getElementsByName("q" + i);
 
-        for (let o of opcoes) {
+        for (let o of opts) {
             if (o.checked && o.value === respostas[i]) {
                 acertos++;
             }
         }
     }
 
+    let total = respostas.length;
     let nota = (acertos / total) * 100;
 
-    salvarHistorico(acertos, total);
+    let result = document.getElementById("result");
 
-    document.getElementById("resultado").innerHTML = `
-        <div class="popup">
-            <h2>📊 Resultado</h2>
-            <p>✔ Acertos: ${acertos}/${total}</p>
-            <p>📈 Nota: ${nota.toFixed(1)}%</p>
-            <button onclick="location.reload()">🔄 Novo Simulado</button>
-        </div>
+    result.style.display = "block";
+    result.innerHTML = `
+        <h2>Resultado</h2>
+        <p>Acertos: ${acertos}/${total}</p>
+        <p>Nota: ${nota.toFixed(1)}%</p>
+        <button onclick="location.reload()">Novo simulado</button>
     `;
 }
 
-function salvarHistorico(acertos, total) {
-    let historico = JSON.parse(localStorage.getItem("hist")) || [];
+/* =========================
+   STATS (BÁSICO)
+========================= */
 
-    historico.push({
-        data: new Date().toISOString(),
-        acertos,
-        total
-    });
-
-    localStorage.setItem("hist", JSON.stringify(historico));
-}
-
-function mostrarStats() {
-    let historico = JSON.parse(localStorage.getItem("hist")) || [];
-
-    let html = `<h3>📊 Histórico</h3>`;
-
-    historico.slice(-5).forEach(h => {
-        html += `<p>${h.acertos}/${h.total}</p>`;
-    });
-
-    document.getElementById("stats").innerHTML = html;
+function loadStats() {
+    let stats = document.getElementById("stats");
+    stats.innerHTML = "";
 }
