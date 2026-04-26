@@ -1,0 +1,1783 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Simulado Interativo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #eef2f7;
+}
+
+header {
+    background: #111827;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.menu {
+    position: fixed;
+    right: 10px;
+    top: 80px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.menu a {
+    display: block;
+    text-decoration: none;
+    padding: 5px;
+    color: #1f2937;
+}
+
+.questao {
+    background: white;
+    padding: 18px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.enunciado {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.alternativa {
+    display: block;
+    margin: 6px 0;
+    cursor: pointer;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.resposta {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    display: none;
+}
+
+.correto {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.errado {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>📘 Simulado Interativo</h2>
+</header>
+
+<div class="menu">
+<a href="#q0">Questão 1</a><a href="#q1">Questão 2</a><a href="#q2">Questão 3</a><a href="#q3">Questão 4</a><a href="#q4">Questão 5</a><a href="#q5">Questão 6</a><a href="#q6">Questão 7</a><a href="#q7">Questão 8</a><a href="#q8">Questão 9</a><a href="#q9">Questão 10</a><a href="#q10">Questão 11</a><a href="#q11">Questão 12</a><a href="#q12">Questão 13</a><a href="#q13">Questão 14</a><a href="#q14">Questão 15</a><a href="#q15">Questão 16</a><a href="#q16">Questão 17</a><a href="#q17">Questão 18</a><a href="#q18">Questão 19</a><a href="#q19">Questão 20</a><a href="#q20">Questão 21</a><a href="#q21">Questão 22</a><a href="#q22">Questão 23</a><a href="#q23">Questão 24</a><a href="#q24">Questão 25</a><a href="#q25">Questão 26</a><a href="#q26">Questão 27</a><a href="#q27">Questão 28</a><a href="#q28">Questão 29</a><a href="#q29">Questão 30</a><a href="#q30">Questão 31</a><a href="#q31">Questão 32</a><a href="#q32">Questão 33</a><a href="#q33">Questão 34</a><a href="#q34">Questão 35</a><a href="#q35">Questão 36</a><a href="#q36">Questão 37</a><a href="#q37">Questão 38</a><a href="#q38">Questão 39</a><a href="#q39">Questão 40</a>
+</div>
+
+<div class="container">
+
+<div class="questao" id="q0">
+
+<h3>Questão 1</h3>
+
+<div class="enunciado">Conforme a Lei Federal n.º 11.350/2006, que regulamenta a profissão de Agente Comunitário de Saúde (ACS), é uma atribuição específica desse profissional:</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q0" value="A">
+A) Aplicar vacinas e realizar curativos em domicílio de forma independente.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q0" value="B">
+B) Coordenar a equipe da Unidade Básica de Saúde nas ausências do enfermeiro.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q0" value="C">
+C) Prescrever medicamentos de baixa complexidade, conforme protocolos estabelecidos.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q0" value="D">
+D) Realizar o mapeamento e o cadastramento das famílias e indivíduos de sua área de atuação.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q0" value="E">
+E) Realizar diagnóstico clínico de doenças prevalentes na comunidade.
+</label>
+
+<button onclick="corrigir(0, 'D', `Uma das atribuições centrais do ACS, conforme a Lei 11.350/2006, é o mapeamento e o cadastramento das famílias em sua área, essencial para o planejamento e a organização das ações de saúde da Estratégia Saúde da Família.`)">
+Enviar resposta
+</button>
+
+<div id="res0" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q1">
+
+<h3>Questão 2</h3>
+
+<div class="enunciado">O Agente Comunitário de Saúde (ACS) é uma peça-chave no controle de endemias, especialmente no combate ao Aedes aegypti, vetor de doenças como dengue, zika e chikungunya. De acordo com o Programa Nacional de Controle da Dengue (PNCD) e as normativas do Ministério da Saúde, qual das opções abaixo descreve corretamente o papel do ACS?</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q1" value="A">
+A) A responsabilidade de identificar e eliminar focos de Aedes aegypti cabe exclusivamente aos agentes de controle de endemias, não sendo atribuição do ACS realizar inspeções ou orientar a população sobre medidas preventivas.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q1" value="B">
+B) Durante as visitas domiciliares, o ACS deve identificar criadouros do mosquito, orientar os moradores sobre a eliminação de potenciais focos, além de registrar suspeitas de casos em formulários específicos e encaminhá-las ao Sistema de Informação de Agravos de Notificação (SINAN).
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q1" value="C">
+C) O ACS deve utilizar kits padronizados de coleta de larvas durante as visitas domiciliares e enviar amostras para análise laboratorial, limitando sua atuação à coleta e registro de dados epidemiológicos.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q1" value="D">
+D) O papel do ACS no controle de endemias é focado na realização de mutirões comunitários e na entrega de materiais educativos, sem necessidade de visitas regulares às residências para monitorar condições ambientais.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q1" value="E">
+E) O ACS está autorizado a realizar pulverização de inseticidas de acordo com os protocolos municipais, desde que devidamente treinado por um supervisor técnico.
+</label>
+
+<button onclick="corrigir(1, 'B', `O ACS identifica criadouros, orienta a eliminação de focos, registra suspeitas e encaminha ao SINAN. A alternativa B descreve corretamente essas ações fundamentais no controle do Aedes aegypti.`)">
+Enviar resposta
+</button>
+
+<div id="res1" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q2">
+
+<h3>Questão 3</h3>
+
+<div class="enunciado">No contexto da ação e das características de trabalho do ACS, na promoção de saúde, assinale a alternativa correta.</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q2" value="A">
+A) O ACS deve ser imparcial e manter distância emocional dos moradores da comunidade, a fim de garantir a neutralidade profissional.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q2" value="B">
+B) O vínculo comunitário do ACS não interfere na qualidade das ações de promoção à saúde.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q2" value="C">
+C) A atuação do ACS deve ocorrer exclusivamente em regiões onde há vulnerabilidade social extrema.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q2" value="D">
+D) O vínculo do ACS com a comunidade facilita a identificação de necessidades locais e fortalece a confiança no serviço de saúde.
+</label>
+
+<button onclick="corrigir(2, 'D', `O vínculo do Agente Comunitário de Saúde (ACS) com a comunidade é crucial. Ele facilita a identificação de problemas de saúde, a adesão a tratamentos e o acesso aos serviços, fortalecendo a confiança, com a alternativa D corretamente apresentando isso.`)">
+Enviar resposta
+</button>
+
+<div id="res2" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q3">
+
+<h3>Questão 4</h3>
+
+<div class="enunciado">De acordo com a legislação vigente que regulamenta a profissão de Agente Comunitário de Saúde, é requisito mínimo para o exercício do cargo:</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q3" value="A">
+A) Ter concluído o ensino fundamental e possuir experiência comprovada em atendimento comunitário.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q3" value="B">
+B) Ter concluído o ensino médio, residir na área de atuação e participar de curso de formação inicial.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q3" value="C">
+C) Ter nível técnico em enfermagem e estar inscrito no conselho de classe da categoria.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q3" value="D">
+D) Ter curso superior em qualquer área da saúde e possuir registro profissional.
+</label>
+
+<button onclick="corrigir(3, 'B', `A Lei Federal nº 11.350/2006 estabelece como requisitos minimos para o ACS o ensino medio completo, residencia na area de atuacao e participacao em curso de formacao inicial. A alternativa B contempla esses criterios.`)">
+Enviar resposta
+</button>
+
+<div id="res3" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q4">
+
+<h3>Questão 5</h3>
+
+<div class="enunciado">No modelo de atenção em saúde, fundamentado na assistência multiprofissional em saúde da família, é considerada atividade precípua do Agente Comunitário de Saúde, em sua área geográfica de atuação, __________________, para a busca de pessoas com sinais ou sintomas de doenças agudas ou crônicas, de agravos ou de eventos de importância para a saúde pública e consequente encaminhamento para a unidade de saúde de referência.</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q4" value="A">
+A) a vacinação de animais
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q4" value="B">
+B) a realização de visitas domiciliares rotineiras
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q4" value="C">
+C) a realização de visitas hospitalares
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q4" value="D">
+D) a estrutura de vigilância epidemiológica e ambiental
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q4" value="E">
+E) a avaliação da carteira do SUS
+</label>
+
+<button onclick="corrigir(4, 'B', `A atividade precípua do ACS em sua área geográfica é a realização de visitas domiciliares rotineiras para buscar pessoas com sinais ou sintomas de doenças e encaminhá-las à unidade de saúde, conforme a legislação.`)">
+Enviar resposta
+</button>
+
+<div id="res4" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q5">
+
+<h3>Questão 6</h3>
+
+<div class="enunciado">No contexto do modelo de atenção em saúde baseado na Estratégia Saúde da Família, determinadas ações são consideradas atribuições típicas do Agente Comunitário de Saúde (ACS) e NÃO exigem a conclusão de curso técnico. Considerando as atribuições previstas na Lei nº 11.350/06, assinale a alternativa que apresenta exclusivamente atividades que o ACS pode realizar, independentemente de ter concluído curso técnico.</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q5" value="A">
+A) Utilização de instrumentos para diagnóstico demográfico e sociocultural, mobilização comunitária e visitas domiciliares regulares para acompanhamento da gestante, criança, idoso, adolescente e grupos vulneráveis.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q5" value="B">
+B) Medição de glicemia capilar, orientação para administração correta de medicação e realização de visitas domiciliares periódicas para acompanhamento da gestante, do idoso e do adolescente.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q5" value="C">
+C) Orientação e apoio à administração de medicamentos, aferição de temperatura axilar e identificação de grupos de risco com maior vulnerabilidade social.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q5" value="D">
+D) Aferição de pressão arterial em domicílio, medição de glicemia capilar e verificação antropométrica.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q5" value="E">
+E) Verificação de temperatura axilar, verificação antropométrica e acompanhamento de pessoas com sinais ou sintomas de alteração bucal.
+</label>
+
+<button onclick="corrigir(5, 'A', `A alternativa A lista exclusivamente atividades típicas do ACS que não exigem curso técnico, como diagnóstico, mobilização comunitária e visitas domiciliares para acompanhamento de diversos grupos. As demais incluem procedimentos que demandam formação técnica específica.`)">
+Enviar resposta
+</button>
+
+<div id="res5" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q6">
+
+<h3>Questão 7</h3>
+
+<div class="enunciado">A atuação do Agente Comunitário de Saúde deve estar fundamentada em princípios éticos e na promoção da cidadania. Considerando esse compromisso, é correto afirmar:</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q6" value="A">
+A) O ACS deve manter sigilo sobre informações dos usuários, respeitar diferenças e estimular o protagonismo comunitário na defesa de direitos.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q6" value="B">
+B) A promoção da cidadania envolve apenas o incentivo à participação política dos usuários em períodos eleitorais.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q6" value="C">
+C) A ética profissional do ACS está limitada ao cumprimento de normas técnicas e administrativas da unidade de saúde.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q6" value="D">
+D) O respeito à cidadania se limita ao bom atendimento e cordialidade nas visitas domiciliares.
+</label>
+
+<button onclick="corrigir(6, 'A', `O Agente Comunitário de Saúde (ACS) deve zelar pelo sigilo das informações de saúde, respeitar a diversidade cultural e social dos usuários e incentivá-los a buscar seus direitos, promovendo o protagonismo comunitário.`)">
+Enviar resposta
+</button>
+
+<div id="res6" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q7">
+
+<h3>Questão 8</h3>
+
+<div class="enunciado">Joana é Agente Comunitária de Saúde (ACS) há quatro anos. Durante uma auditoria interna, a Secretaria de Saúde constatou que Joana não reside mais na área geográfica onde atua, tendo se mudado há cerca de seis meses, sem informar oficialmente. Além disso, não houve comprovação de que o desempenho profissional dela estivesse abaixo dos padrões mínimos estabelecidos, e nenhum procedimento disciplinar por falta grave foi instaurado. Diante da situação relatada e considerando as determinações da Lei nº 11.350/06, assinale a alternativa correta quanto à possibilidade de rescisão unilateral do contrato.</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q7" value="A">
+A) A Administração não pode rescindir unilateralmente o contrato de Joana em caso de comprovada insuficiência de desempenho.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q7" value="B">
+B) Não existe previsão legal específica que trate da residência do ACS como motivo de rescisão, sendo necessária a abertura prévia de processo administrativo disciplinar por abandono de função.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q7" value="C">
+C) É vedada pela legislação a rescisão unilateral pela administração pública.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q7" value="D">
+D) Somente é possível a rescisão unilateral em caso de falta grave.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q7" value="E">
+E) A Administração poderá rescindir unilateralmente o contrato porque o Agente Comunitário de Saúde está sujeito à rescisão quando não cumpre o requisito de residir na área de atuação.
+</label>
+
+<button onclick="corrigir(7, 'E', `A Lei nº 11.350/06 estabelece a residência na área de atuação como requisito para o ACS. A Administração pode rescindir o contrato unilateralmente caso este requisito não seja cumprido, mesmo sem comprovação de baixo desempenho ou procedimento disciplinar.`)">
+Enviar resposta
+</button>
+
+<div id="res7" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q8">
+
+<h3>Questão 9</h3>
+
+<div class="enunciado">Durante uma visita domiciliar, o Agente Comunitário de Saúde identifica uma criança com atraso vacinal e hábitos alimentares inadequados. Diante dessa situação, qual deve ser a atuação do ACS em consonância com a promoção da saúde da criança e do adolescente?</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q8" value="A">
+A) Informar aos responsáveis que a vacinação é obrigatória e que, em caso de recusa, a criança será excluída do atendimento na unidade.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q8" value="B">
+B) Registrar a situação no prontuário, reforçar junto aos responsáveis a importância da vacinação e alimentação saudável e articular com a equipe para o acompanhamento contínuo.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q8" value="C">
+C) Comunicar diretamente o Conselho Tutelar e suspender o acompanhamento até que a situação seja regularizada.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q8" value="D">
+D) Recomendar o uso de suplementos alimentares e prescrever dieta balanceada com base nas condições observadas.
+</label>
+
+<button onclick="corrigir(8, 'B', `A atuacao do ACS deve ser preventiva e educativa. Informar, reforcar a importancia da vacinacao e alimentacao e articular com a equipe para acompanhamento continuo sao acoes condizentes com a promocao da saude.`)">
+Enviar resposta
+</button>
+
+<div id="res8" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q9">
+
+<h3>Questão 10</h3>
+
+<div class="enunciado">Com base no conceito de território, área e microárea, é correto afirmar que</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q9" value="A">
+A) o território é definido pela gestão municipal, sendo uma divisão administrativa fixa.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q9" value="B">
+B) a microárea é o espaço de atuação de cada ACS, permitindo identificar problemas específicos das famílias e comunidades.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q9" value="C">
+C) a área corresponde ao município como um todo, e não se relaciona com a divisão em equipes de saúde.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q9" value="D">
+D) a microárea corresponde a um domicílio acompanhado pelo ACS, facilitando o vínculo e o cuidado longitudinal das famílias.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q9" value="E">
+E) o ACS deve atuar somente na Unidade de Saúde, não é sua função identificar problemas ambientais no território.
+</label>
+
+<button onclick="corrigir(9, 'B', `A microárea é definida como o espaço geográfico de atuação do Agente Comunitário de Saúde, permitindo um acompanhamento próximo e a identificação de necessidades específicas das famílias e da comunidade.`)">
+Enviar resposta
+</button>
+
+<div id="res9" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q10">
+
+<h3>Questão 11</h3>
+
+<div class="enunciado">Em um município amazônico, a Agente Comunitária de Saúde (ACS) Maria foi convidada, por uma família vizinha de outra área geopoliticamente definida pelo município, para realizar visitas domiciliares semanais, alegando ausência da Agente Comunitária de Saúde (ACS) responsável pela microárea/domicílio, em tempo superior há 8 meses. Considerando a Lei nº 13.595/2018 que dispõe sobre a reformulação das atribuições, a jornada e as condições de trabalho, o grau de formação profissional, os cursos de formação técnica e continuada e a indenização de transporte dos profissionais Agentes Comunitários de Saúde e Agentes de Combate às Endemias, a conduta mais adequada da Agente Comunitária de Saúde (ACS) “Maria” é:</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q10" value="A">
+A) Informar a família que ela só pode atuar na área geográfica de sua atribuição e acionar a equipe de Saúde da Família responsável pela área daquela família, registrando a demanda na unidade.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q10" value="B">
+B) Realizar as visitas solicitadas fora de sua área sempre que houver consenso entre os moradores da casa e a própria ACS, porque a prioridade é não cobrir territórios específicos geograficamente.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q10" value="C">
+C) Aceitar fazer temporariamente as visitas em troca de compensação em transporte, sem comunicar ou registrar junto a chefia da Unidade Básica de Saúde.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q10" value="D">
+D) Transferir imediatamente a responsabilidade à Secretaria Municipal de Saúde sem comunicar a família ou a UBS local, alegando ilimitação legal.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q10" value="E">
+E) Passar a atender somente aquela família e deixar outras visitas de sua área sem cobertura, explicando que o volume de trabalho ficou incontrolável.
+</label>
+
+<button onclick="corrigir(10, 'A', `A ACS Maria deve informar corretamente que sua atuação é restrita à sua microárea e acionar a equipe responsável pela área da família vizinha, registrando a demanda. Isso garante que a família seja atendida pela equipe adequada e que a gestão conheça a necessidade.`)">
+Enviar resposta
+</button>
+
+<div id="res10" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q11">
+
+<h3>Questão 12</h3>
+
+<div class="enunciado">O Agente Comunitário de Saúde realiza visitas de forma periódica, promovendo abordagem humanizada. Marque a ação que fortalece o vínculo com cada família:</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q11" value="A">
+A) Realizar conversas sobre rotinas diárias e encaminhar demandas, acolhendo questões locais e respeitando suas prioridades.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q11" value="B">
+B) Relatar problemas ao gestor municipal e evitar diálogos com a família, confiando em protocolos gerais de resolução.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q11" value="C">
+C) Aguardar o surgimento de crise na residência, restringindo orientações às ocasiões em que há queixa explícita.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q11" value="D">
+D) Manter visitas rápidas destinadas ao preenchimento de planilhas, restringir contato pessoal e esclarecimentos.
+</label>
+
+<button onclick="corrigir(11, 'A', `Conversar sobre rotinas, encaminhar demandas, acolher questões locais e respeitar prioridades são ações que fortalecem o vínculo da família com o Agente Comunitário de Saúde. As outras opções descrevem posturas que fragilizam esse vínculo.`)">
+Enviar resposta
+</button>
+
+<div id="res11" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q12">
+
+<h3>Questão 13</h3>
+
+<div class="enunciado">Sobre o uso do mapeamento territorial e do diagnóstico comunitário pelo ACS, é correto afirmar que</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q12" value="A">
+A) o mapeamento territorial identifica a localização dos domicílios, sendo o diagnóstico das condições de saúde realizado posteriormente pela equipe multidisciplinar (eMulti).
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q12" value="B">
+B) o diagnóstico comunitário é subsídio para gerar dados epidemiológicos oficiais, sendo as informações coletadas pelo ACS complementares e secundárias.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q12" value="C">
+C) o uso do mapeamento e das visitas domiciliares permite identificar fatores sociais e ambientais que influenciam a saúde da comunidade.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q12" value="D">
+D) o mapeamento territorial tem finalidade cadastral, enquanto a identificação de fatores de risco ambientais compete à Vigilância Sanitária.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q12" value="E">
+E) o diagnóstico das condições de saúde baseia-se em indicadores quantitativos, não incluindo aspectos sociais e culturais observados nas visitas.
+</label>
+
+<button onclick="corrigir(12, 'C', `O mapeamento territorial e as visitas domiciliares permitem ao ACS coletar informações ricas sobre o ambiente e os determinantes sociais da saúde, essenciais para o diagnóstico comunitário e a atuação em saúde.`)">
+Enviar resposta
+</button>
+
+<div id="res12" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q13">
+
+<h3>Questão 14</h3>
+
+<div class="enunciado">A definição de saúde pela OMS inclui bem-estar físico, mental e social, indo além da ausência de doenças. No trabalho do ACS, essa compreensão exige:</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q13" value="A">
+A) Enfatizar somente o tratamento de enfermidades.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q13" value="B">
+B) Concentrar-se na medicalização dos casos.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q13" value="C">
+C) Ignorar fatores como educação e renda.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q13" value="D">
+D) Atuar de forma integrada com outros setores.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q13" value="E">
+E) Restringir as atividades ao consultório médico.
+</label>
+
+<button onclick="corrigir(13, 'D', `A compreensão ampliada de saúde pela OMS exige que o ACS atue de forma integrada com diversos setores (educação, assistência social, saneamento) para abordar os determinantes sociais da saúde.`)">
+Enviar resposta
+</button>
+
+<div id="res13" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q14">
+
+<h3>Questão 15</h3>
+
+<div class="enunciado">As atividades do Agente Comunitário de Saúde em visitas residenciais envolvem escuta qualificada. Selecione a postura que estimula cooperação e comprometimento dos moradores:</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q14" value="A">
+A) Apresentar orientações baseadas em manuais técnicos e suspender qualquer tentativa de diálogo.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q14" value="B">
+B) Convidar os moradores para definir soluções conjuntas, fortalecendo a autonomia familiar e ouvindo perspectivas individuais.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q14" value="C">
+C) Aplicar questionários de rotina e finalizar a entrevista rapidamente, evitando aprofundar questões delicadas.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q14" value="D">
+D) Comparecer às moradias para colher indicadores e transferir a responsabilidade de resolução ao nível de gestão.
+</label>
+
+<button onclick="corrigir(14, 'B', `A escuta qualificada e a colaboração na busca por soluções fortalecem o vínculo com os moradores e promovem o protagonismo familiar, incentivando o comprometimento com as ações de saúde.`)">
+Enviar resposta
+</button>
+
+<div id="res14" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q15">
+
+<h3>Questão 16</h3>
+
+<div class="enunciado">Sobre as ferramentas de trabalho do Agente Comunitário de Saúde, analise as afirmativas a seguir, classificando-as como verdadeira (V) ou falsa (F). ( ) Realizar o cadastro e identificar os principais problemas de saúde contribui para que os serviços possam oferecer uma atenção mais voltada para a família, de acordo com a realidade e os problemas de cada comunidade. ( ) Os profissionais devem atuar de forma integrada, discutindo, analisando em equipe e atualizando as situações identificadas no território, pois tão importante quanto fazer o cadastro da população é mantê-lo atualizado. ( ) Conhecer o número de pessoas da comunidade por faixa etária e sexo é importante, pois há doenças que acometem mais crianças do que adultos ou mais mulheres que homens, o que influenciará no planejamento em saúde. ( ) Ao realizar os cadastros individuais e domiciliares, o preenchimento das informações deve ser o mais completo possível, pois elas são importantes ferramentas para compreendermos quem são as pessoas que vivem no território, favorecendo o planejamento de ações para essa população. As afirmativas são, respectivamente,</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q15" value="A">
+A) V – V – V – V.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q15" value="B">
+B) V – F – V – V.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q15" value="C">
+C) F – V – F – V.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q15" value="D">
+D) V – F – F – V.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q15" value="E">
+E) V – V – F – F.
+</label>
+
+<button onclick="corrigir(15, 'A', `Todas as afirmativas estão corretas. O cadastro e a atualização são essenciais para o planejamento de ações de saúde, a compreensão da população e a integralidade da atenção no território.`)">
+Enviar resposta
+</button>
+
+<div id="res15" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q16">
+
+<h3>Questão 17</h3>
+
+<div class="enunciado">O território é o espaço onde o Agente Comunitário de Saúde (ACS) exerce suas atividades diariamente. Assinale a alternativa que descreve uma ação CORRETA na atuação do ACS dentro do seu território:</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q16" value="A">
+A) Selecionar quais famílias acompanhar conforme critérios pessoais, otimizando o tempo das visitas domiciliares.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q16" value="B">
+B) Realizar visitas sistemáticas em todas as residências, identificando problemas locais e necessidades específicas das famílias.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q16" value="C">
+C) Limitar suas visitas somente às áreas centrais do território, priorizando regiões com maior estrutura urbana.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q16" value="D">
+D) Organizar suas ações de saúde exclusivamente em campanhas periódicas, suspendendo atividades rotineiras em períodos intermediários.
+</label>
+
+<button onclick="corrigir(16, 'B', `A atuação do Agente Comunitário de Saúde deve ser abrangente e sistemática em seu território, com o objetivo de identificar e atender às necessidades de saúde das famílias, promovendo ações de prevenção e promoção da saúde.`)">
+Enviar resposta
+</button>
+
+<div id="res16" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q17">
+
+<h3>Questão 18</h3>
+
+<div class="enunciado">Em relação ao desfecho de uma visita domiciliar, analise as possibilidades de registro a seguir. I. “Visita realizada”, se ocorreu de acordo com o planejado pelo profissional. II. “Visita recusada”, se o cidadão recusa a visita, impossibilitando realizar a ação pretendida. III. “Ausente”, se o cidadão procurado estava ausente ou não foi possível contatá-lo. Está correto o que se afirma em</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q17" value="A">
+A) I, II e III.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q17" value="B">
+B) II e III, apenas.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q17" value="C">
+C) I e II, apenas.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q17" value="D">
+D) III, apenas.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q17" value="E">
+E) I e III, apenas.
+</label>
+
+<button onclick="corrigir(17, 'A', `Todas as possibilidades de registro (visita realizada, visita recusada e ausente) são corretas e refletem os diferentes desfechos de uma visita domiciliar, permitindo um registro preciso das ações.`)">
+Enviar resposta
+</button>
+
+<div id="res17" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q18">
+
+<h3>Questão 19</h3>
+
+<div class="enunciado">Durante busca ativa, um ACS identificou criança com vacinação incompleta. Considerando que o motivo principal da visita deve ser registrado no sistema de informação, essa ação deve ser registrada como</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q18" value="A">
+A) "periódica", uma vez que toda visita de busca ativa deve ser registrada como visita domiciliar periódica.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q18" value="B">
+B) "consulta", pois a visita teve como finalidade agendar consulta para atualização da caderneta.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q18" value="C">
+C) "exame", pois a verificação da caderneta de vacinação é considerada procedimento de avaliação.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q18" value="D">
+D) "vacina", pois a visita teve como finalidade verificar e promover a vacinação de criança com atraso vacinal.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q18" value="E">
+E) "outro motivo", pois busca ativa não se enquadra nas categorias específicas de registro.
+</label>
+
+<button onclick="corrigir(18, 'D', `A visita de busca ativa para atualização vacinal deve ser registrada com o motivo 'vacina', pois o objetivo principal foi verificar e promover a vacinação da criança com atraso vacinal, conforme a finalidade da ação.`)">
+Enviar resposta
+</button>
+
+<div id="res18" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q19">
+
+<h3>Questão 20</h3>
+
+<div class="enunciado">Sobre as atribuições do Agente Comunitário de Saúde, analise as afirmativas a seguir, classificando-as como verdadeira (V) ou falsa (F). ( ) O ACS deve realizar visitas domiciliares periódicas, registrar as informações no sistema e comunicar à equipe multiprofissional. ( ) A promoção de ações educativas, sobre a importância da vacinação, do pré-natal e do controle da hipertensão, está entre as atribuições do ACS. ( ) Cabe ao ACS prescrever medicamentos e solicitar exames laboratoriais, quando o profissional identifica necessidade de acompanhamento de usuários com doenças crônicas não transmissíveis, como a hipertensão. ( ) A atuação do ACS contribui para a integralidade da atenção, ao articular prevenção, promoção e acompanhamento no território. As afirmativas são, respectivamente,</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q19" value="A">
+A) V – V – F – V.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q19" value="B">
+B) V – F – V – V.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q19" value="C">
+C) F – V – V – F.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q19" value="D">
+D) V – V – V – F.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q19" value="E">
+E) F – F – V – V.
+</label>
+
+<button onclick="corrigir(19, 'A', `As afirmativas estão classificadas corretamente como Verdadeira, Verdadeira, Falsa e Verdadeira. O ACS realiza visitas, é responsável por ações educativas, não prescreve medicamentos nem solicita exames, e contribui para a integralidade da atenção.`)">
+Enviar resposta
+</button>
+
+<div id="res19" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q20">
+
+<h3>Questão 21</h3>
+
+<div class="enunciado">Em uma comunidade, a equipe de saúde percebeu altos índices de obesidade infantil. A Agente Comunitária de Saúde (ACS) foi chamada para colaborar na execução de um projeto educativo intersetorial. A proposta incluía rodas de conversa nas escolas sobre alimentação saudável e incentivo à prática de esportes, em parceria com a associação de moradores. Em relação aos princípios de promoção da saúde e educação em saúde, é correto afirmar que</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q20" value="A">
+A) a ACS pode desenvolver ações educativas apenas sob supervisão da equipe, priorizando o domicílio.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q20" value="B">
+B) a ação descrita exemplifica promoção da saúde, pois envolve estratégias intersetoriais e participação.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q20" value="C">
+C) a obesidade infantil deve ser acompanhada pela equipe multiprofissional, cabendo ao ACS planejar e orientar sobre o tratamento.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q20" value="D">
+D) as ações educativas devem seguir roteiros padronizados, sem considerar especificidades da comunidade local.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q20" value="E">
+E) a promoção da saúde inclui prevenção de doenças em nível individual e deve priorizar o tratamento e intervenções clínicas.
+</label>
+
+<button onclick="corrigir(20, 'B', `A alternativa B descreve corretamente a promoção da saúde ao envolver estratégias intersetoriais (escolas, associação de moradores) e a participação da comunidade, abordando a obesidade infantil de forma ampla e preventiva.`)">
+Enviar resposta
+</button>
+
+<div id="res20" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q21">
+
+<h3>Questão 22</h3>
+
+<div class="enunciado">Uma Agente Comunitária de Saúde (ACS) identificou que várias famílias da microárea apresentavam armazenamento inadequado de água, favorecendo a proliferação de mosquitos transmissores de arboviroses (Dengue, Zika, Chikungunya). A equipe da Estratégia Saúde da Família decidiu planejar uma ação educativa comunitária para enfrentar o problema. Com base nos conceitos de educação em saúde e promoção da saúde, é correto afirmar que</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q21" value="A">
+A) a atuação do ACS deve concentrar-se no acompanhamento domiciliar, deixando as ações intersetoriais sob responsabilidade dos demais profissionais da equipe.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q21" value="B">
+B) a intersetorialidade é importante, mas a efetividade das ações depende principalmente da adesão individual das famílias às orientações sobre a água potável.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q21" value="C">
+C) as ações educativas devem seguir um modelo único definido pela Secretaria Municipal de Saúde, garantindo padronização e uniformidade das práticas em todos os territórios.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q21" value="D">
+D) o planejamento deve considerar as características socioculturais da comunidade, incentivando a participação ativa das famílias na busca de soluções.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q21" value="E">
+E) o papel do ACS limita-se a apoiar logisticamente as atividades coletivas, sem necessidade de envolvimento direto nas rodas de conversa ou nas parcerias com instituições locais.
+</label>
+
+<button onclick="corrigir(21, 'D', `A alternativa D está correta ao enfatizar que o planejamento de ações educativas deve considerar as características socioculturais da comunidade e incentivar a participação ativa das famílias, princípios fundamentais da educação e promoção da saúde.`)">
+Enviar resposta
+</button>
+
+<div id="res21" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q22">
+
+<h3>Questão 23</h3>
+
+<div class="enunciado">A entrevista realizada pelos Agentes Comunitários de Saúde (ACS) é uma ferramenta essencial para o dia a dia, com isso assinale a alternativa que apresenta corretamente os objetivos dessa ferramenta:</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q22" value="A">
+A) O objetivo principal da entrevista é apenas registrar as queixas de saúde da população, sem levar em consideração as condições de acesso e as estratégias.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q22" value="B">
+B) A entrevista visa identificar as necessidades de saúde da população em áreas rurais e remotas, mas não inclui a avaliação do trabalho do ACS na estratégia de Saúde da Família ou no uso dos serviços de saúde.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q22" value="C">
+C) A ferramenta de entrevista busca entender as dificuldades de acesso aos serviços de saúde e as estratégias do ACS, com foco em identificar as especificidades do trabalho em áreas urbanas, apenas.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q22" value="D">
+D) A entrevista do ACS tem como objetivos reconhecer as estratégias desenvolvidas para responder às necessidades em saúde das populações residentes em áreas rurais e remotas; identificar especificidades do trabalho em municípios rurais e remotos; conhecer as dificuldades da população em municípios rurais remotos para acesso e uso dos serviços de saúde; e conhecer o trabalho nas estratégias Saúde da Família e Agentes Comunitários de Saúde.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q22" value="E">
+E) A entrevista realizada pelo ACS não envolve identificar as especificidades do trabalho nas áreas rurais e remotas, apenas os desafios relacionados aos serviços de saúde urbanos.
+</label>
+
+<button onclick="corrigir(22, 'D', `A alternativa D descreve de forma completa e correta os múltiplos objetivos da entrevista do ACS, abrangendo desde o reconhecimento das estratégias à identificação de dificuldades de acesso aos serviços.`)">
+Enviar resposta
+</button>
+
+<div id="res22" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q23">
+
+<h3>Questão 24</h3>
+
+<div class="enunciado">A vacina contra o HPV é oferecida gratuitamente pelo SUS e protege contra o câncer. Uma ACS percebeu que muitos adolescentes e responsáveis apresentavam dúvidas sobre a segurança da vacina e sua necessidade para meninos. Algumas famílias recusavam a vacinação por acreditarem que poderia estimular o início precoce da vida sexual. Nesse contexto, com base nas atribuições do ACS, é correto afirmar que</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q23" value="A">
+A) a ACS deve encaminhar a família à UBS para esclarecimentos com o enfermeiro, pois dúvidas sobre vacinas exigem conhecimento técnico específico que não faz parte de suas atribuições.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q23" value="B">
+B) a ACS deve respeitar a decisão da família e orientar sobre os riscos da não vacinação, mas não deve insistir caso a recusa seja mantida, priorizando a autonomia familiar.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q23" value="C">
+C) a ACS deve orientar corretamente que a vacina contra o HPV é segura, protege contra o câncer e deve ser aplicada em meninas e meninos, reforçando que a imunização não estimula o início da vida sexual.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q23" value="D">
+D) a vacinação contra o HPV deve ser ofertada apenas a adolescentes já em vida sexual ativa, não sendo indicada de forma preventiva.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q23" value="E">
+E) a ACS deve focar na orientação sobre o uso de preservativos como principal forma de prevenção, pois a vacina tem eficácia limitada e não substitui outras medidas preventivas.
+</label>
+
+<button onclick="corrigir(23, 'C', `A alternativa C é a correta, pois o ACS deve esclarecer que a vacina contra o HPV é segura, protege contra o câncer, é para meninos e meninas, e não estimula o início da vida sexual, dissipando mitos.`)">
+Enviar resposta
+</button>
+
+<div id="res23" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q24">
+
+<h3>Questão 25</h3>
+
+<div class="enunciado">Os agentes comunitários de saúde devem promover a prevenção de doenças e a promoção da saúde por meio de ações educativas individuais e coletivas, nos domicílios e na comunidade, não é função desses profissionais:</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q24" value="A">
+A) Identificar situações de riscos e encaminhar aos setores responsáveis.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q24" value="B">
+B) Incentivar o aleitamento materno.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q24" value="C">
+C) Identificar gestantes e encaminhá-las ao pré-natal.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q24" value="D">
+D) Orientar sobre a prevenção da AIDS.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q24" value="E">
+E) Prescrever tratamento homeopáticos.
+</label>
+
+<button onclick="corrigir(24, 'E', `Agentes comunitários de saúde atuam na prevenção e promoção da saúde através de ações educativas e encaminhamentos. A prescrição de tratamentos, seja homeopático ou não, é atribuição privativa de profissionais de saúde com formação específica (médicos, enfermeiros), não de ACS.`)">
+Enviar resposta
+</button>
+
+<div id="res24" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q25">
+
+<h3>Questão 26</h3>
+
+<div class="enunciado">Você, na qualidade de Agente Comunitário de Saúde (ACS), realiza uma visita domiciliar em uma comunidade e, ao interagir com um morador, ele menciona estar apresentando sintomas como febre de início abrupto, dor de cabeça, dores no corpo e nas articulações, prostração, fraqueza, dor atrás dos olhos, erupção cutânea com coceira, manchas vermelhas pelo corpo, além de náuseas, vômitos e dores abdominais. Diante do caso em tela, qual seria a atitude correta a ser tomada diante desse quadro clínico?</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q25" value="A">
+A) Orientar o paciente a automedicar-se com medicamentos para febre e dor, sem necessidade de encaminhamento médico.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q25" value="B">
+B) Registrar os sintomas e sugerir que o paciente aguarde para ver se os sintomas melhoram, sem tomar nenhuma providência.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q25" value="C">
+C) Encaminhar o usuário à unidade de saúde; orientar sobre a importância da hidratação oral, desde os primeiros sintomas da doença; notificar o caso suspeito, em ficha específica, e informar a equipe da unidade de saúde; acompanhar o usuário com arbovirose, após atendimento nos serviços de saúde, por meio de visitas domiciliares, orientando a família e a comunidade.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q25" value="D">
+D) Dizer ao paciente que os sintomas são comuns de uma gripe e que ele deve descansar em casa até que melhore.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q25" value="E">
+E) Informar ao paciente que os sintomas não são graves e que ele deve procurar um médico apenas se os sintomas persistirem por mais de uma semana.
+</label>
+
+<button onclick="corrigir(25, 'C', `A atitude correta para o ACS é encaminhar o usuário à unidade de saúde, orientar sobre hidratação e notificar o caso suspeito. Essa conduta visa a investigação, tratamento e acompanhamento adequados, além de prevenir a disseminação da doença.`)">
+Enviar resposta
+</button>
+
+<div id="res25" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q26">
+
+<h3>Questão 27</h3>
+
+<div class="enunciado">Com base no caso clínico de João da Silva, sobre o papel do Agente Comunitário de Saúde (ACS) nesse contexto, é CORRET O aﬁrmar que:</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q26" value="A">
+A) tem um papel fundamental e muitas vezes subestimado no cuidado de pacientes com doenças crônicas, como o Diabetes Mellitus tipo 2, especialmente quando há complicações físicas (como úlcera infectada no pé, no caso do Seu João) e impacto emocional associado ao adoecimento.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q26" value="B">
+B) tem um papel central e altamente técnico na avaliação, tratamento e prevenção de complicações relacionadas às lesões cutâneas — especialmente porque estamos diante de um caso de pé diabético, que pode evoluir para amputações se não tratado adequadamente.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q26" value="C">
+C) ele atua tanto na atenção primária quanto em níveis mais especializados, com foco na tomada de decisões clínicas, coordenação terapêutica, encaminhamentos adequados e acompanhamento longitudinal, quando possível.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q26" value="D">
+D) realiza visita domiciliar, na qual observa a ferida e condições de saúde e autocuidado. Participa de atividades de educação em saúde, nas quais orienta sobre diabetes, alimentação e cuidados com os pés. Estabelece vínculo e assim incentiva ida à UBS e adesão ao tratamento. Comunica à equipe situações de alerta sobre agravamento ou abandono.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q26" value="E">
+E) o ACS é considerado uma peça-chave na equipe multiprofissional que acompanha pacientes com Diabetes Mellitus tipo 2, especialmente quando há descompensação glicêmica e complicações, como no caso do Seu João.
+</label>
+
+<button onclick="corrigir(26, 'D', `A alternativa D descreve as atribuições do ACS: visita domiciliar para observação e orientação, educação em saúde, vínculo, incentivo à adesão ao tratamento e comunicação de alertas à equipe.`)">
+Enviar resposta
+</button>
+
+<div id="res26" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q27">
+
+<h3>Questão 28</h3>
+
+<div class="enunciado">O câncer do colo do útero é o terceiro mais incidente em mulheres brasileiras e tem como principal causa o HPV. Durante visitas domiciliares, uma ACS identificou que muitas mulheres não realizavam o exame citopatológico regularmente, alegando falta de tempo, vergonha e desconhecimento. A ACS propôs organizar grupo educativo e reforçar convites individuais durante as visitas. Com base nas atribuições do ACS, é correto afirmar que</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q27" value="A">
+A) a ACS deve registrar a situação e encaminhar o problema para a equipe de enfermagem, pois ações educativas sobre exames ginecológicos exigem conhecimento técnico específico.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q27" value="B">
+B) a ACS atuou corretamente ao identificar barreiras culturais e práticas, propor ações educativas coletivas e reforçar a importância do exame durante as visitas domiciliares.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q27" value="C">
+C) a ACS deve priorizar a orientação individual durante as visitas, pois grupos educativos sobre exames ginecológicos podem gerar constrangimento entre as participantes.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q27" value="D">
+D) a captação de mulheres para o exame citopatológico é atribuição do médico e do enfermeiro, cabendo ao ACS apenas o registro de faltosas no sistema.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q27" value="E">
+E) a ACS deve focar na prevenção primária por meio da vacinação contra HPV, pois o rastreamento com exame citopatológico compete à atenção especializada.
+</label>
+
+<button onclick="corrigir(27, 'B', `A alternativa B descreve a ação mais adequada da ACS, que identificou barreiras, propôs ações educativas coletivas e reforçou a importância do exame, alinhada com suas atribuições de promoção da saúde e prevenção.`)">
+Enviar resposta
+</button>
+
+<div id="res27" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q28">
+
+<h3>Questão 29</h3>
+
+<div class="enunciado">A microárea é uma divisão territorial importante para a atuação do Agente Comunitário de Saúde (ACS), definida de forma a atender melhor às necessidades de saúde da população. Qual das alternativas abaixo descreve corretamente a microárea?</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q28" value="A">
+A) A microárea corresponde a um bairro específico, sem vínculo com a equipe de saúde local.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q28" value="B">
+B) A microárea é um espaço geográfico delimitado onde residem cerca de 400 a 750 pessoas e corresponde à área de atuação de um agente comunitário de saúde (ACS).
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q28" value="C">
+C) A microárea é a área onde o ACS realiza atividades exclusivamente de vacinação, sem outras responsabilidades.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q28" value="D">
+D) A microárea se refere a um conjunto de municípios onde os ACS atuam de forma coordenada para cobrir todas as regiões.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q28" value="E">
+E) A microárea é uma grande área rural que engloba diversas cidades e é coberta por vários ACS simultaneamente.
+</label>
+
+<button onclick="corrigir(28, 'B', `A microarea e uma divisao territorial para o trabalho do ACS, definida como uma area geografica com cerca de 400 a 750 pessoas, garantindo cobertura e proximidade com a populacao atendida.`)">
+Enviar resposta
+</button>
+
+<div id="res28" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q29">
+
+<h3>Questão 30</h3>
+
+<div class="enunciado">A hipertensão arterial é uma doença crônica muitas vezes assintomática, mas que pode gerar complicações graves como AVC e infarto. Durante visita domiciliar, uma ACS percebeu que um morador com hipertensão havia abandonado o tratamento porque "se sentia bem" e não apresentava sintomas. Nesse caso, a orientação correta da ACS seria</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q29" value="A">
+A) explicar que a hipertensão muitas vezes não causa sintomas, mas pode gerar complicações graves, sendo fundamental manter o tratamento e o acompanhamento.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q29" value="B">
+B) orientar que o usuário retorne à UBS para reavaliação médica antes de decidir pela continuidade do tratamento, respeitando sua percepção sobre o próprio corpo.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q29" value="C">
+C) reforçar a importância do tratamento, mas informar que medicamentos podem ser suspensos temporariamente quando a pressão está controlada e não há sintomas.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q29" value="D">
+D) explicar que o controle da hipertensão também pode ser feito com mudanças no estilo de vida, podendo o usuário reduzir gradualmente a medicação se mantiver dieta adequada e atividade física.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q29" value="E">
+E) registrar a informação e encaminhar o caso para o enfermeiro ou médico, pois orientações sobre adesão ao tratamento medicamentoso exigem conhecimento técnico específico.
+</label>
+
+<button onclick="corrigir(29, 'A', `A alternativa A é a orientação correta, pois explica que a hipertensão pode ser assintomática mas gerar complicações graves, reforçando a importância da continuidade do tratamento e do acompanhamento médico.`)">
+Enviar resposta
+</button>
+
+<div id="res29" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q30">
+
+<h3>Questão 31</h3>
+
+<div class="enunciado">Ao iniciar o trabalho em uma área, a equipe de saúde da família deve realizar o processo de territorialização e mapeamento da área de atuação. Considerando as atribuições do Agente Comunitário de Saúde (ACS), é CORRET O aﬁrmar que:</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q30" value="A">
+A) a participação do ACS no mapeamento é limitada ao registro de prontuários médicos e à organização dos estoques da unidade de saúde.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q30" value="B">
+B) o ACS atua apenas na coleta de dados clínicos dos usuários, não sendo envolvido no processo de mapeamento territorial da comunidade.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q30" value="C">
+C) cabe ao ACS realizar exclusivamente ações educativas em grupos, sendo dispensável sua participação em diagnósticos territoriais.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q30" value="D">
+D) o ACS é responsável por colaborar ativamente no levantamento de informações sobre condições sociais, demográficas e ambientais da área, contribuindo para o planejamento das ações da equipe.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q30" value="E">
+E) o mapeamento do território é uma atribuição exclusiva do enfermeiro da equipe, cabendo ao ACS apenas o agendamento de visitas domiciliares.
+</label>
+
+<button onclick="corrigir(30, 'D', `O ACS atua ativamente no levantamento de informações socioambientais, demográficas e de saúde, sendo peça fundamental no diagnóstico territorial e planejamento das ações da equipe de saúde da família.`)">
+Enviar resposta
+</button>
+
+<div id="res30" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q31">
+
+<h3>Questão 32</h3>
+
+<div class="enunciado">Uma Agente Comunitária de Saúde (ACS) encontrou um usuário com Diabetes Mellitus que apresentava feridas nos pés, usava calçados apertados e relatava que não fazia acompanhamento regular na Unidade Básica de Saúde. Ele acreditava que apenas controlar a alimentação seria suficiente para evitar complicações. Nessa situação, a conduta correta da ACS é</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q31" value="A">
+A) reforçar a importância do controle alimentar e orientar que o acompanhamento na Unidade só é necessário se as feridas piorarem.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q31" value="B">
+B) explicar que as complicações do Diabetes podem incluir úlceras e amputações, orientar sobre o cuidado diário com os pés, uso de calçados adequados e reforçar a importância do acompanhamento regular na Unidade de Saúde.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q31" value="C">
+C) reforçar que a própria ACS, durante as visitas domiciliares, pode tratar as feridas nos pés com pomadas caseiras, evitando a necessidade de encaminhamento para a Unidade de Saúde.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q31" value="D">
+D) encaminhar o usuário diretamente à Unidade de Pronto Atendimento, para um acompanhamento mais eficaz nesse caso.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q31" value="E">
+E) informar que o acompanhamento do Diabetes deve ser feito apenas em hospitais, não cabendo à Atenção Básica.
+</label>
+
+<button onclick="corrigir(31, 'B', `A alternativa B descreve a conduta mais completa e segura da ACS, enfatizando a prevenção de complicações, o cuidado com os pés e a necessidade de acompanhamento regular na UBS para um paciente com Diabetes Mellitus e feridas nos pés.`)">
+Enviar resposta
+</button>
+
+<div id="res31" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q32">
+
+<h3>Questão 33</h3>
+
+<div class="enunciado">Durante visita domiciliar, uma ACS encontrou usuário em sofrimento psíquico grave, com crises frequentes e isolamento. A família não sabia a quem recorrer, acreditando que apenas hospitais psiquiátricos poderiam atender. A ACS orientou, registrou e comunicou à equipe da Estratégia Saúde da Família (ESF). Considerando as atribuições da ACS e a Rede de Atenção Psicossocial (RAPS), a conduta adequada seria</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q32" value="A">
+A) orientar a família a procurar atendimento de urgência no hospital geral mais próximo, pois casos de sofrimento psíquico grave exigem internação imediata.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q32" value="B">
+B) encaminhar a situação para avaliação da equipe da ESF, que poderá prescrever medicação inicial e agendar consulta com psiquiatra no serviço especializado.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q32" value="C">
+C) explicar que o usuário pode ser acompanhado pelo CAPS (Centro de Atenção Psicossocial), serviço especializado em saúde mental, articulado com a ESF, para garantir cuidado territorial e comunitário.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q32" value="D">
+D) informar que o cuidado em saúde mental requer acompanhamento exclusivo por psicólogo ou psiquiatra, não sendo atribuição da Atenção Básica esse tipo de acompanhamento.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q32" value="E">
+E) orientar a família sobre técnicas de manejo de crise e iniciar acompanhamento terapêutico domiciliar, até que o usuário apresente melhora dos sintomas.
+</label>
+
+<button onclick="corrigir(32, 'C', `A alternativa C destaca a importância do CAPS como serviço especializado em saúde mental articulado com a ESF, promovendo cuidado territorial e comunitário, o que é a abordagem correta para o sofrimento psíquico grave.`)">
+Enviar resposta
+</button>
+
+<div id="res32" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q33">
+
+<h3>Questão 34</h3>
+
+<div class="enunciado">Uma criança não estava se desenvolvendo conforme os marcos apresentados na caderneta da criança. A mãe decidiu buscar atendimento para um possível diagnóstico. Seu filho, uma criança de 4 anos, apresentava atraso na fala, dificuldade de interação social e comportamentos repetitivos. Nessa situação, o Agente Comunitário de Saúde (ACS) deve</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q33" value="A">
+A) encaminhar a criança para consulta com o psiquiatra, pois, dependendo do diagnóstico, necessitará de prescrição de medicamentos.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q33" value="B">
+B) orientar a família a observar o comportamento da criança e procurar a escola para verificar se as dificuldades se repetem em outros ambientes.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q33" value="C">
+C) priorizar as ações de imunização e vigilância epidemiológica e encaminhar para tratamento em hospital especializado.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q33" value="D">
+D) orientar a família a observar o comportamento por mais alguns meses antes de procurar novamente a unidade, pois atrasos no desenvolvimento são comuns nessa faixa etária.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q33" value="E">
+E) orientar sobre a importância do acompanhamento precoce, encaminhar para avaliação pela equipe multiprofissional em articulação com o Centro de Atenção Psicossocial Infantil (CAPSi).
+</label>
+
+<button onclick="corrigir(33, 'E', `A alternativa E descreve a conduta adequada do ACS ao orientar sobre a importância do acompanhamento precoce e encaminhar para a equipe multiprofissional e CAPSi, visando um diagnóstico e tratamento adequados para o atraso no desenvolvimento infantil.`)">
+Enviar resposta
+</button>
+
+<div id="res33" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q34">
+
+<h3>Questão 35</h3>
+
+<div class="enunciado">Assinalar a alternativa que apresenta uma das características indispensáveis ao trabalho do Agente Comunitário de Saúde.</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q34" value="A">
+A) Ser ativo e ter iniciativa.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q34" value="B">
+B) Agir com egoísmo e ética.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q34" value="C">
+C) Ser estagnado e negligente.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q34" value="D">
+D) Agir com desleixo e estúrdio.
+</label>
+
+<button onclick="corrigir(34, 'A', `Ser ativo e ter iniciativa são características essenciais para o Agente Comunitário de Saúde, pois permitem que ele atue de forma proativa na comunidade e busque soluções para problemas de saúde.`)">
+Enviar resposta
+</button>
+
+<div id="res34" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q35">
+
+<h3>Questão 36</h3>
+
+<div class="enunciado">Durante uma visita domiciliar, o ACS deverá adotar diversas condutas, para garantir a qualidade no serviço prestado, no que tange a estas condutas, analise as afirmativas e assinale a que apresenta corretamente a classificação em V (Verdadeiro) ou F (Falso): ( ) É importante atuar com sigilo e confidencialidade com as informações das quais tem acesso nas visitas, prontuários, discussões de casos e demais atividades inerentes à profissão; ( ) O ACS deve realizar a visita domiciliar sem utilizar uniforme ou qualquer tipo de identificação, a fim de evitar possíveis discriminações; ( ) Não planejar o itinerário que o ACS irá seguir em um turno de visitas no território é o ideal.</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q35" value="A">
+A) V, V, F.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q35" value="B">
+B) F, F, V.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q35" value="C">
+C) V, F, F.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q35" value="D">
+D) F, V, V.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q35" value="E">
+E) Nenhuma das alternativas.
+</label>
+
+<button onclick="corrigir(35, 'C', `A primeira afirmativa é V (sigilo é essencial). A segunda é F (o ACS deve usar uniforme para identificação). A terceira é F (o planejamento do itinerário é ideal para otimizar o trabalho).`)">
+Enviar resposta
+</button>
+
+<div id="res35" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q36">
+
+<h3>Questão 37</h3>
+
+<div class="enunciado">Durante uma visita domiciliar de rotina, a Agente Comunitária de Saúde (ACS) Maria percebe que o pequeno João de Souza, de 2 anos, apresenta diﬁculdades na fala e parece não responder adequadamente quando é chamado pelo nome. Sua mãe, dona Luciana, relata que ele não frequenta a creche, raramente interage com outras crianças e ainda não começou a formar frases — apenas emite sons isolados. Além disso, a mãe relata que João costuma ﬁcar assistindo televisão a maior parte do dia e tem uma alimentação pobre em frutas, verduras e carnes. As vacinas estão em atraso e o cartão de vacinação está incompleto. Após análise do caso, leia as aﬁrmativas a seguir sobre as atribuições do Agente Comunitário de Saúde (ACS):</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q36" value="A">
+A) Identiﬁcar sinais de risco à saúde da criança durante a visita domiciliar e comunicar à equipe da Estratégia Saúde da Família, promovendo o vínculo entre comunidade e serviço de saúde.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q36" value="B">
+B) Alertar sobre os malefícios do excesso de tela e orientar sobre brincadeiras que estimulem o desenvolvimento da linguagem e da interação social.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q36" value="C">
+C) Corrigir diretamente o cartão de vacinação com informações disponíveis na visita domiciliar.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q36" value="D">
+D) I.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q36" value="E">
+E) II e III.
+</label>
+
+<button onclick="corrigir(36, 'A', `A alternativa A engloba as principais atribuições do ACS descritas no caso: identificar riscos, comunicar à equipe e promover o vínculo. As outras alternativas focam em ações pontuais ou incorretas (administrar vacina).`)">
+Enviar resposta
+</button>
+
+<div id="res36" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q37">
+
+<h3>Questão 38</h3>
+
+<div class="enunciado">Recentemente, o Conselho Regional de Farmácia do estado do Rio de Janeiro fez um apelo à população sobre o uso inadequado de medicamentos, devido ao significativo aumento da automedicação sem controle. Neste quesito, o Agente Comunitário de Saúde pode auxiliar no combate da automedicação por meio da adoção de qual atitude afirmativa?</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q37" value="A">
+A) Induzir a população do território adscrito a procurar orientação médica farmacológica somente em casos de automedicação com fármacos rotulados como tarja preta.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q37" value="B">
+B) Prescrever medicamentos de uso controlado sempre que houver manifestação de interesse própria do paciente.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q37" value="C">
+C) Auxiliar na promoção da conscientização popular sobre o uso adequado de fármacos em geral.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q37" value="D">
+D) Incentivar somente a utilização de fármacos com baixa capacidade de produzir malefícios e ponderar quanto ao uso indiscriminado dos antibióticos.
+</label>
+
+<button onclick="corrigir(37, 'C', `O Agente Comunitário de Saúde, ao promover a conscientização sobre o uso seguro e eficaz de medicamentos, atua diretamente no combate à automedicação e na orientação da população.`)">
+Enviar resposta
+</button>
+
+<div id="res37" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q38">
+
+<h3>Questão 39</h3>
+
+<div class="enunciado">Durante uma visita domiciliar de rotina, o Agente Comunitário de Saúde (ACS) José observa que Dona Maria, uma idosa de 76 anos, apresenta diﬁculdades de locomoção, refere dores nos joelhos, tem esquecido de tomar seus medicamentos de uso contínuo (para hipertensão) e relata episódios recentes de tontura. Ao observar cuidadosamente o ambiente doméstico, o ACS identiﬁca tapetes soltos, iluminação fraca e degraus altos na entrada. Dona Maria também conta que se sente sozinha e triste, especialmente desde que perdeu uma amiga próxima. Ela não participa de grupos da comunidade e raramente vai à Unidade de Saúde. Com base no caso de Dona Maria, analise as aﬁrmativas a seguir sobre as atribuições do ACS:</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q38" value="A">
+A) Registrar a situação em prontuário e orientar Dona Maria e seus familiares sobre mudanças simples que podem reduzir o risco de quedas, comunicando à equipe da ESF.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q38" value="B">
+B) O ACS decide administrar o medicamento anti-hipertensivo diretamente à idosa todos os dias.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q38" value="C">
+C) Ao escutar Dona Maria e identiﬁcar sinais de tristeza e isolamento, o ACS pode incentivá-la a participar de grupos de convivência ou atividades na Unidade de Saúde, promovendo envelhecimento ativo.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q38" value="D">
+D) I.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q38" value="E">
+E) II e III.
+</label>
+
+<button onclick="corrigir(38, 'A', `A alternativa A descreve a conduta esperada: registrar, orientar sobre medidas de segurança e comunicar à equipe da ESF. A alternativa B é incorreta pois o ACS não administra medicamentos. A alternativa C é válida, mas a A engloba mais a situação completa de risco e a atuação integral do ACS.`)">
+Enviar resposta
+</button>
+
+<div id="res38" class="resposta"></div>
+
+</div>
+</div>
+
+<div class="questao" id="q39">
+
+<h3>Questão 40</h3>
+
+<div class="enunciado">Em microárea recém-designada, o ACS inicia o mapeamento de imóveis e riscos. Qual informação mínima deve constar na ficha de cada imóvel para garantir cobertura, rastreio e retorno?</div>
+
+<div>
+
+<label class="alternativa">
+<input type="radio" name="q39" value="A">
+A) Somente o prenome do morador, referência do quarteirão e presença de animais domésticos.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q39" value="B">
+B) Endereço completo, ponto de referência, tipo de imóvel, responsável presente e principais recipientes de risco.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q39" value="C">
+C) Nome do chefe da família, total de residentes e frequência de coleta de lixo informada.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q39" value="D">
+D) Placa do veículo do morador, horários de trabalho e número de telefone do vizinho mais próximo.
+</label>
+
+<label class="alternativa">
+<input type="radio" name="q39" value="E">
+E) Cor da fachada, quantidade de andares e material do telhado observado na via pública.
+</label>
+
+<button onclick="corrigir(39, 'B', `Para um mapeamento eficaz em saúde, a ficha do imóvel deve conter informações cruciais como endereço, ponto de referência, tipo de imóvel, responsável e principais recipientes de risco, permitindo identificação e ação.`)">
+Enviar resposta
+</button>
+
+<div id="res39" class="resposta"></div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+function corrigir(i, correta, comentario) {
+
+    let opcoes = document.getElementsByName("q" + i);
+    let marcada = null;
+
+    for (let opt of opcoes) {
+        if (opt.checked) marcada = opt.value;
+    }
+
+    let box = document.getElementById("res" + i);
+
+    if (!marcada) {
+        box.style.display = "block";
+        box.className = "resposta errado";
+        box.innerHTML = "⚠ Selecione uma alternativa.";
+        return;
+    }
+
+    if (marcada === correta) {
+        box.className = "resposta correto";
+        box.innerHTML = "✅ Correto!<br><br>🧠 " + comentario;
+    } else {
+        box.className = "resposta errado";
+        box.innerHTML = "❌ Errado<br>✔ Correta: " + correta + "<br><br>🧠 " + comentario;
+    }
+
+    box.style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
