@@ -58,18 +58,26 @@
                     <div class="progress-bar" id="progress-bar"></div>
                 </div>
                 <div class="quiz-stats">
-                    <span id="question-counter"><i class="fa-solid fa-list-ol"></i> 0/40</span>
+                    <span id="question-counter"><i class="fa-solid fa-list-ol"></i> 1/40</span>
                     <button class="danger-btn small-btn" onclick="location.reload()">
-                        <i class="fa-solid fa-xmark"></i> Cancelar
+                        <i class="fa-solid fa-xmark"></i> Sair
                     </button>
                 </div>
             </div>
 
             <div id="quiz-content" class="quiz-content"></div>
 
-            <div class="quiz-actions">
-                <button onclick="finish()" class="success-btn finish-btn">
-                    <i class="fa-solid fa-check-double"></i> Finalizar Simulado
+            <div class="quiz-navigation">
+                <button id="btn-prev" class="nav-btn" onclick="prevQuestion()" disabled>
+                    <i class="fa-solid fa-arrow-left"></i> Anterior
+                </button>
+                <div class="nav-center">
+                    <button id="btn-finish-early" class="danger-btn small-btn" onclick="confirmFinish()">
+                        Encerrar Simulado
+                    </button>
+                </div>
+                <button id="btn-next" class="nav-btn primary-btn" onclick="nextQuestion()">
+                    Próxima <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
         </section>

@@ -3,6 +3,7 @@ let questoesDB = [];
 let simuladoAtual = [];
 let respostasUsuario = {}; // { questaoIndex: { selecionada, correta, conferida } }
 let totalQuestions = 40;
+let currentQuestionIndex = 0; // Para navegação
 
 // DOM Elements
 const elHome = document.getElementById('home');
@@ -84,8 +85,18 @@ window.startQuiz = function() {
     const qtde = Math.min(totalQuestions, questoesDB.length);
     simuladoAtual = shuffleArray(questoesDB).slice(0, qtde);
     respostasUsuario = {};
+    
+    // Initialize user answers state
+    simuladoAtual.forEach((q, index) => {
+        respostasUsuario[index] = {
+            correta: q.resposta,
+            selecionada: null,
+            conferida: false
+        };
+    });
 
-    renderQuiz();
+    currentQuestionIndex = 0;
+    renderQuestion(currentQuestionIndex);
     updateProgress();
     
     // Scroll to top
@@ -102,60 +113,117 @@ function escapeHtml(unsafe) {
          .replace(/'/g, "&#039;");
 }
 
-// Render Quiz
-function renderQuiz() {
-    let html = '';
+// Render Single Question
+function renderQuestion(index) {
+    const q = simuladoAtual[index];
+    const state = respostasUsuario[index];
+    
+    let html = `
+    <div class="question-card slide-up" id="q-card-${index}">
+        <h3>Questão ${index + 1} de ${simuladoAtual.length}</h3>
+        <div class="question-text">${escapeHtml(q.pergunta)}</div>
+        
+        <div class="options-grid" id="options-${index}">
+    `;
 
-    simuladoAtual.forEach((q, index) => {
-        respostasUsuario[index] = {
-            correta: q.resposta,
-            selecionada: null,
-            conferida: false
-        };
-
-        html += `
-        <div class="question-card slide-up" style="animation-delay: ${index * 0.05}s" id="q-card-${index}">
-            <h3>Questão ${index + 1}</h3>
-            <div class="question-text">${escapeHtml(q.pergunta)}</div>
+    for (const [key, value] of Object.entries(q.alternativas)) {
+        // Pre-selection and styling logic if already answered
+        let labelClass = "option-label";
+        let isSelected = state.selecionada === key ? "selected" : "";
+        let isChecked = state.selecionada === key ? "checked" : "";
+        
+        // Se a questão já foi conferida, mostrar estilos de certo/errado
+        let extraStyles = "";
+        if (state.conferida) {
+            labelClass += " disabled";
             
-            <div class="options-grid" id="options-${index}">
-        `;
-
-        for (const [key, value] of Object.entries(q.alternativas)) {
-            html += `
-                <label class="option-label" id="label-${index}-${key}" onclick="selectOption(${index}, '${key}')">
-                    <input type="radio" name="q${index}" value="${key}">
-                    <div class="option-content">
-                        <span class="option-letter">${key}</span>
-                        <span class="option-text">${escapeHtml(value)}</span>
-                    </div>
-                </label>
-            `;
+            if (key === state.correta) {
+                extraStyles = `style="border-color: var(--success); border-width: 2px; border-style: dashed; background: var(--success-light);"`;
+            } else if (state.selecionada === key && key !== state.correta) {
+                extraStyles = `style="border-color: var(--danger); background: var(--danger-light);"`;
+            }
         }
 
         html += `
-            </div>
-            
-            <button id="btn-check-${index}" class="primary-btn w-100" onclick="checkAnswer(${index})" disabled>
-                <i class="fa-solid fa-clipboard-check"></i> Conferir Resposta
-            </button>
-
-            <div id="feedback-${index}" class="feedback-box"></div>
-        </div>
+            <label class="option-label ${isSelected} ${labelClass}" id="label-${index}-${key}" ${state.conferida ? "" : `onclick="selectOption(${index}, '${key}')"`} ${extraStyles}>
+                <input type="radio" name="q${index}" value="${key}" ${isChecked} ${state.conferida ? "disabled" : ""}>
+                <div class="option-content">
+                    <span class="option-letter">${key}</span>
+                    <span class="option-text">${escapeHtml(value)}</span>
+                </div>
+            </label>
         `;
-    });
+    }
+
+    html += `
+        </div>
+        
+        <button id="btn-check-${index}" class="primary-btn w-100" onclick="checkAnswer(${index})" ${state.selecionada && !state.conferida ? "" : "disabled"} style="${state.conferida ? 'display:none;' : ''}">
+            <i class="fa-solid fa-clipboard-check"></i> Conferir Resposta
+        </button>
+
+        <div id="feedback-${index}" class="feedback-box"></div>
+    </div>
+    `;
 
     elQuizContent.innerHTML = html;
+    
+    // Atualiza feedback se já estiver conferida
+    if (state.conferida) {
+        showFeedbackUI(index);
+    }
+    
+    updateNavigationControls();
 }
+
+// Navigation Controls
+function updateNavigationControls() {
+    const btnPrev = document.getElementById('btn-prev');
+    const btnNext = document.getElementById('btn-next');
+    
+    btnPrev.disabled = currentQuestionIndex === 0;
+    
+    if (currentQuestionIndex === simuladoAtual.length - 1) {
+        btnNext.innerHTML = '<i class="fa-solid fa-flag-checkered"></i> Finalizar Tudo';
+        btnNext.className = 'nav-btn success-btn';
+        btnNext.onclick = finish;
+    } else {
+        btnNext.innerHTML = 'Próxima <i class="fa-solid fa-arrow-right"></i>';
+        btnNext.className = 'nav-btn primary-btn';
+        btnNext.onclick = nextQuestion;
+    }
+    
+    updateProgress();
+}
+
+window.nextQuestion = function() {
+    if (currentQuestionIndex < simuladoAtual.length - 1) {
+        currentQuestionIndex++;
+        renderQuestion(currentQuestionIndex);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+};
+
+window.prevQuestion = function() {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        renderQuestion(currentQuestionIndex);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+};
+
+window.confirmFinish = function() {
+    if (confirm("Tem certeza que deseja encerrar o simulado? As questões não respondidas serão contabilizadas como erros.")) {
+        finish();
+    }
+};
 
 // Select Option Interaction
 window.selectOption = function(qIndex, optionKey) {
-    if (respostasUsuario[qIndex].conferida) return; // Prevent change after check
+    if (respostasUsuario[qIndex].conferida) return;
 
-    // Update state
     respostasUsuario[qIndex].selecionada = optionKey;
 
-    // Update UI visually
     const optionsContainer = document.getElementById(`options-${qIndex}`);
     const labels = optionsContainer.querySelectorAll('.option-label');
     labels.forEach(l => l.classList.remove('selected'));
@@ -164,7 +232,6 @@ window.selectOption = function(qIndex, optionKey) {
     selectedLabel.classList.add('selected');
     selectedLabel.querySelector('input').checked = true;
 
-    // Enable check button
     const btnCheck = document.getElementById(`btn-check-${qIndex}`);
     btnCheck.disabled = false;
 };
@@ -177,55 +244,27 @@ window.checkAnswer = function(qIndex) {
     state.conferida = true;
     updateProgress();
 
+    // Re-render UI to apply disabled states and colors easily
+    renderQuestion(qIndex);
+};
+
+// Show Feedback UI
+function showFeedbackUI(qIndex) {
+    const state = respostasUsuario[qIndex];
     const q = simuladoAtual[qIndex];
     const isCorrect = state.selecionada === state.correta;
-
-    // Disable all options and check button
-    const optionsContainer = document.getElementById(`options-${qIndex}`);
-    const labels = optionsContainer.querySelectorAll('.option-label');
-    labels.forEach(l => {
-        l.classList.add('disabled');
-        l.style.cursor = 'default';
-        l.onclick = null;
-    });
-
-    const btnCheck = document.getElementById(`btn-check-${qIndex}`);
-    btnCheck.style.display = 'none';
-
-    // Highlight correct and wrong
-    const selectedLabel = document.getElementById(`label-${qIndex}-${state.selecionada}`);
-    const correctLabel = document.getElementById(`label-${qIndex}-${state.correta}`);
-
-    if (isCorrect) {
-        selectedLabel.style.borderColor = 'var(--success)';
-        selectedLabel.style.backgroundColor = 'var(--success-light)';
-    } else {
-        selectedLabel.style.borderColor = 'var(--danger)';
-        selectedLabel.style.backgroundColor = 'var(--danger-light)';
-        
-        // Also show correct one
-        if (correctLabel) {
-            correctLabel.style.borderColor = 'var(--success)';
-            correctLabel.style.borderWidth = '2px';
-            correctLabel.style.borderStyle = 'dashed';
-        }
-    }
-
-    // Show Feedback
     const feedbackBox = document.getElementById(`feedback-${qIndex}`);
     
     let feedbackHtml = '';
     if (isCorrect) {
-        feedbackHtml = `
-            <div class="feedback-header"><i class="fa-solid fa-circle-check"></i> Você Acertou!</div>
-        `;
-        feedbackBox.classList.add('feedback-ok');
+        feedbackHtml = `<div class="feedback-header"><i class="fa-solid fa-circle-check"></i> Você Acertou!</div>`;
+        feedbackBox.className = 'feedback-box feedback-ok show';
     } else {
         feedbackHtml = `
             <div class="feedback-header"><i class="fa-solid fa-circle-xmark"></i> Você Errou</div>
             <div class="feedback-correct-answer">A resposta correta é a letra <strong>${state.correta}</strong></div>
         `;
-        feedbackBox.classList.add('feedback-bad');
+        feedbackBox.className = 'feedback-box feedback-bad show';
     }
 
     if (q.comentario && q.comentario.trim() !== '') {
@@ -233,21 +272,20 @@ window.checkAnswer = function(qIndex) {
     }
 
     feedbackBox.innerHTML = feedbackHtml;
-    feedbackBox.classList.add('show');
-};
+}
 
 // Update Progress Bar
 function updateProgress() {
-    let conferidas = 0;
+    let respondidas = 0;
     for (const key in respostasUsuario) {
-        if (respostasUsuario[key].conferida) conferidas++;
+        if (respostasUsuario[key].selecionada !== null) respondidas++;
     }
     
     const total = simuladoAtual.length;
-    const percentage = total > 0 ? (conferidas / total) * 100 : 0;
+    const percentage = total > 0 ? (respondidas / total) * 100 : 0;
     
     elProgressBar.style.width = `${percentage}%`;
-    elQuestionCounter.innerHTML = `<i class="fa-solid fa-list-ol"></i> ${conferidas}/${total}`;
+    elQuestionCounter.innerHTML = `<i class="fa-solid fa-list-ol"></i> ${currentQuestionIndex + 1}/${total}`;
 }
 
 // Finish Quiz
@@ -255,29 +293,26 @@ window.finish = function() {
     // Auto-check any un-checked answered questions
     simuladoAtual.forEach((_, index) => {
         if (respostasUsuario[index].selecionada && !respostasUsuario[index].conferida) {
-            checkAnswer(index);
+            respostasUsuario[index].conferida = true;
         }
     });
 
-    // Calculate score
     let acertos = 0;
     const total = simuladoAtual.length;
 
     for (const key in respostasUsuario) {
         const state = respostasUsuario[key];
-        if (state.conferida && state.selecionada === state.correta) {
+        if (state.selecionada === state.correta) {
             acertos++;
         }
     }
 
     const percentage = total > 0 ? Math.round((acertos / total) * 100) : 0;
 
-    // Show result
     document.getElementById('score-correct').innerText = acertos;
     document.getElementById('score-total').innerText = total;
     document.getElementById('score-percentage').innerText = `${percentage}%`;
 
-    // Configure circle chart color based on score
     const circlePath = document.getElementById('score-circle-path');
     const resultIcon = document.getElementById('result-icon');
     const resultTitle = document.getElementById('result-title');
@@ -298,7 +333,6 @@ window.finish = function() {
 
     circlePath.style.stroke = color;
     
-    // Trigger animation for the circle chart
     setTimeout(() => {
         circlePath.setAttribute('stroke-dasharray', `${percentage}, 100`);
     }, 100);

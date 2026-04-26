@@ -546,15 +546,40 @@ button:disabled {
     opacity: 0.9;
 }
 
-.quiz-actions {
-    text-align: center;
-    margin-top: 2rem;
-    padding: 2rem 0;
+.quiz-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 1rem 0;
+    gap: 1rem;
 }
 
-.finish-btn {
-    font-size: 1.1rem;
-    padding: 1rem 2rem;
+.nav-btn {
+    min-width: 140px;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+}
+
+.nav-center {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 500px) {
+    .quiz-navigation {
+        flex-direction: column-reverse;
+    }
+    .nav-btn {
+        width: 100%;
+    }
+    .nav-center {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    .nav-center button {
+        width: 100%;
+    }
 }
 
 /* =========================
