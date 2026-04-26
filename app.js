@@ -40,7 +40,7 @@ themeToggleBtn.addEventListener('click', () => {
 // Initialization
 async function initApp() {
     try {
-        const response = await fetch("simulado_completo.json");
+        const response = await fetch("simulado_completo.json?v=3");
         if (!response.ok) throw new Error("Erro ao carregar as questões");
         const data = await response.json();
         
