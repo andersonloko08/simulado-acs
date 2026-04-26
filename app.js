@@ -81,9 +81,19 @@ window.startQuiz = function() {
         setTimeout(() => elQuiz.classList.add('active'), 50);
     }, 400); // Wait for fade out
 
-    // Select questions
-    const qtde = Math.min(totalQuestions, questoesDB.length);
-    simuladoAtual = shuffleArray(questoesDB).slice(0, qtde);
+    // Select questions based on Edital rules
+    const qPt = questoesDB.filter(q => q.disciplina === "Língua Portuguesa");
+    const qRl = questoesDB.filter(q => q.disciplina === "Raciocínio Lógico");
+    const qInfo = questoesDB.filter(q => q.disciplina === "Informática Básica");
+    const qCe = questoesDB.filter(q => q.disciplina === "Conhecimentos Específicos");
+
+    const selPt = shuffleArray(qPt).slice(0, 10);
+    const selRl = shuffleArray(qRl).slice(0, 5);
+    const selInfo = shuffleArray(qInfo).slice(0, 5);
+    const selCe = shuffleArray(qCe).slice(0, 20);
+
+    // Grouping questions by subject to match real exam feel
+    simuladoAtual = [...selPt, ...selRl, ...selInfo, ...selCe];
     respostasUsuario = {};
     
     // Initialize user answers state
@@ -120,6 +130,9 @@ function renderQuestion(index) {
     
     let html = `
     <div class="question-card slide-up" id="q-card-${index}">
+        <div class="question-meta" style="font-size: 0.85rem; color: var(--primary); font-weight: bold; margin-bottom: 5px; text-transform: uppercase;">
+            <i class="fa-solid fa-book-open"></i> ${escapeHtml(q.disciplina || 'Questão')}
+        </div>
         <h3>Questão ${index + 1} de ${simuladoAtual.length}</h3>
         <div class="question-text">${escapeHtml(q.pergunta)}</div>
         
