@@ -1,47 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simulado ACS</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado ACS | Concurso e Qualificação</title>
+    <meta name="description" content="Plataforma de Simulado para Agente Comunitário de Saúde (ACS). Gere simulados aleatórios e teste seus conhecimentos com correção em tempo real.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header class="topbar">
-    📘 Plataforma de Simulado ACS
-</header>
+    <!-- Background Decoration -->
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
 
-<main class="app">
+    <header class="topbar">
+        <div class="topbar-content">
+            <i class="fa-solid fa-stethoscope logo-icon"></i>
+            <span>Simulado ACS PRO</span>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema escuro">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </header>
 
-    <!-- TELA INICIAL -->
-    <section id="home" class="screen active">
+    <main class="app-container">
 
-        <div class="card-center">
+        <!-- TELA INICIAL -->
+        <section id="home" class="screen active fade-in">
+            <div class="glass-card home-card">
+                <div class="hero-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h1>Pronto para testar seus conhecimentos?</h1>
+                <p>Gere um simulado exclusivo com 40 questões selecionadas aleatoriamente do nosso banco. Treine para o concurso de Agente Comunitário de Saúde com correção em tempo real.</p>
+                
+                <div class="stats-container" id="stats">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-spinner fa-spin"></i> Carregando banco de questões...
+                    </div>
+                </div>
 
-            <h1>Bem-vinda</h1>
-            <p>Gere um simulado aleatório com 40 questões</p>
+                <button id="start-btn" onclick="startQuiz()" class="primary-btn btn-pulse" disabled>
+                    <i class="fa-solid fa-play"></i> Iniciar Simulado
+                </button>
+            </div>
+        </section>
 
-            <button onclick="startQuiz()">
-                ▶ Gerar Simulado
-            </button>
+        <!-- QUIZ -->
+        <section id="quiz" class="screen">
+            <div class="quiz-header glass-card">
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <div class="quiz-stats">
+                    <span id="question-counter"><i class="fa-solid fa-list-ol"></i> 0/40</span>
+                    <button class="danger-btn small-btn" onclick="location.reload()">
+                        <i class="fa-solid fa-xmark"></i> Cancelar
+                    </button>
+                </div>
+            </div>
 
-            <div id="stats"></div>
+            <div id="quiz-content" class="quiz-content"></div>
 
+            <div class="quiz-actions">
+                <button onclick="finish()" class="success-btn finish-btn">
+                    <i class="fa-solid fa-check-double"></i> Finalizar Simulado
+                </button>
+            </div>
+        </section>
+
+        <!-- RESULTADO -->
+        <div id="result-modal" class="modal-overlay">
+            <div class="modal-content glass-card zoom-in">
+                <div class="result-icon" id="result-icon">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+                <h2 id="result-title">Resultado Final</h2>
+                
+                <div class="score-circle">
+                    <svg viewBox="0 0 36 36" class="circular-chart">
+                        <path class="circle-bg"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <path class="circle" id="score-circle-path"
+                            stroke-dasharray="0, 100"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <text x="18" y="20.35" class="percentage" id="score-percentage">0%</text>
+                    </svg>
+                </div>
+
+                <div class="result-details">
+                    <p class="acertos-text">Você acertou <strong id="score-correct">0</strong> de <strong id="score-total">0</strong> questões.</p>
+                </div>
+
+                <div class="result-actions">
+                    <button onclick="location.reload()" class="primary-btn w-100">
+                        <i class="fa-solid fa-rotate-right"></i> Fazer Novo Simulado
+                    </button>
+                </div>
+            </div>
         </div>
 
-    </section>
+    </main>
 
-    <!-- QUIZ -->
-    <section id="quiz" class="screen"></section>
+    <footer class="footer">
+        <p>Simulado ACS &copy; 2026. Desenvolvido para estudos.</p>
+    </footer>
 
-    <!-- RESULTADO -->
-    <section id="result"></section>
-
-</main>
-
-<script src="app.js"></script>
+    <script src="app.js"></script>
 
 </body>
 </html>
