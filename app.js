@@ -423,10 +423,24 @@ window.finish = function() {
 
     const percentage = maxPontos > 0 ? Math.round((totalPontos / maxPontos) * 100) : 0;
 
+    let respondidas = 0;
+    for (const key in respostasUsuario) {
+        if (respostasUsuario[key].selecionada !== null) respondidas++;
+    }
+    const completionPercentage = total > 0 ? Math.round((respondidas / total) * 100) : 0;
+
     // Atualizar UI com pontos em vez de acertos puros
     document.getElementById('score-correct').innerText = totalPontos.toFixed(1) + " pts";
     document.getElementById('score-total').innerText = maxPontos.toFixed(1) + " pts";
-    document.getElementById('score-percentage').innerText = `${percentage}%`;
+    
+    // Fix para SVG text: usar textContent em vez de innerText
+    const scorePctEl = document.getElementById('score-percentage');
+    if (scorePctEl) scorePctEl.textContent = `${percentage}%`;
+
+    const answeredCountEl = document.getElementById('answered-count');
+    if (answeredCountEl) answeredCountEl.innerText = respondidas;
+    const answeredPctEl = document.getElementById('answered-percentage');
+    if (answeredPctEl) answeredPctEl.innerText = `${completionPercentage}%`;
 
     const circlePath = document.getElementById('score-circle-path');
     const resultIcon = document.getElementById('result-icon');
