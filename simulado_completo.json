@@ -2590,6 +2590,222 @@
       },
       "resposta": "B",
       "comentario": "Em 2024, o Ministério da Saúde iniciou a vacinação contra Dengue priorizando a faixa etária de 10 a 14 anos devido ao maior risco de hospitalização."
+    },
+    {
+      "id": "base_premium_01",
+      "disciplina": "Raciocínio Lógico",
+      "pergunta": "Analise o diagrama de Venn abaixo, que representa os conjuntos A, B e C. Qual região representa a interseção exclusiva entre os conjuntos A e B (ou seja, elementos que pertencem a A e B, mas NÃO pertencem a C)?",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/e/e0/3_set.png",
+      "tags": ["Imagem", "Diagrama"],
+      "alternativas": {
+        "A": "A região central onde os três círculos se sobrepõem.",
+        "B": "A área de sobreposição entre os círculos A e B que fica fora do círculo C.",
+        "C": "Toda a área interna do círculo C.",
+        "D": "A área que pertence apenas ao círculo A."
+      },
+      "resposta": "B",
+      "comentario": "A interseção de A e B (A ∩ B) inclui a parte central. Ao excluir C, sobra apenas a 'pétala' superior de encontro entre A e B."
+    },
+    {
+      "id": "base_premium_02",
+      "disciplina": "Raciocínio Lógico",
+      "pergunta": "Observe a sequência lógica de formas no 'Puzzle IQ' abaixo. De acordo com o padrão estabelecido nas linhas e colunas, qual forma deve preencher o espaço com a interrogação?",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Puzzle-IQ.png",
+      "tags": ["Imagem", "Sequência"],
+      "alternativas": {
+        "A": "Um quadrado com um círculo interno.",
+        "B": "Um triângulo com um ponto central.",
+        "C": "A forma que completa a lógica de rotação e preenchimento observada nas demais células.",
+        "D": "Uma forma totalmente aleatória sem relação com as anteriores."
+      },
+      "resposta": "C",
+      "comentario": "Em testes de matrizes lógicas, deve-se observar a evolução das formas (cor, posição ou número de elementos) tanto na horizontal quanto na vertical."
+    },
+    {
+      "id": "base_premium_03",
+      "disciplina": "Informática Básica",
+      "pergunta": "A imagem mostra o layout de um teclado padrão utilizado no Brasil. Qual o nome deste padrão, caracterizado pela presença da tecla 'Ç'?",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/5/53/Brazilian_computer_keyboard_%28produced_2016%29.jpg",
+      "tags": ["Imagem", "Hardware"],
+      "alternativas": {
+        "A": "QWERTY Americano.",
+        "B": "ABNT2.",
+        "C": "AZERTY.",
+        "D": "DVORAK."
+      },
+      "resposta": "B",
+      "comentario": "O padrão brasileiro de teclados é o ABNT2, que se diferencia do ABNT original por possuir a tecla AltGr para acesso a caracteres especiais."
+    },
+    {
+      "id": "base_premium_04",
+      "disciplina": "Informática Básica",
+      "pergunta": "No Windows 11, o ícone azul mostrado na imagem é utilizado para representar qual tipo de item no sistema de arquivos?",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Windows_11_FOLDER_BLUE.png",
+      "tags": ["Imagem", "Windows"],
+      "alternativas": {
+        "A": "Um arquivo de texto comprimido (ZIP).",
+        "B": "Uma pasta (diretório) de arquivos.",
+        "C": "Um atalho de internet.",
+        "D": "A lixeira do sistema."
+      },
+      "resposta": "B",
+      "comentario": "O ícone de cor azul claro em perspectiva é o design padrão do Windows 11 para pastas de sistema e de usuário."
+    },
+    {
+      "id": "base_premium_05",
+      "disciplina": "Língua Portuguesa",
+      "pergunta": "Analise a tirinha 'Trending in School'. A linguagem utilizada na tirinha é classificada como:",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/9/91/Trending_in_School..._A_comic_strip_about_education_by_Luis_Ricardo.jpg",
+      "tags": ["Imagem", "Interpretação"],
+      "alternativas": {
+        "A": "Apenas linguagem verbal (apenas as palavras importam).",
+        "B": "Apenas linguagem não-verbal (apenas os desenhos importam).",
+        "C": "Linguagem mista (combinação de texto e imagens para gerar sentido).",
+        "D": "Linguagem arcaica e de difícil compreensão."
+      },
+      "resposta": "C",
+      "comentario": "Tirinhas e quadrinhos utilizam a linguagem mista, onde o texto e a expressão visual dos personagens trabalham juntos para transmitir a mensagem."
+    },
+    {
+      "id": "base_premium_06",
+      "disciplina": "Língua Portuguesa",
+      "pergunta": "Ao ler o manuscrito do poema 'To My Boy', observa-se uma caligrafia característica de uma época passada. Sobre a interpretação de textos literários manuscritos, assinale a correta:",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/2/23/Wiggin-ToMyBoy_-_manuscript_of_Wiggin%27s_poem_%22To_My_Boy%22.jpg",
+      "tags": ["Imagem", "Poesia"],
+      "alternativas": {
+        "A": "Textos manuscritos não podem ser considerados literatura.",
+        "B": "A forma como o texto é escrito (manuscrito) pode transmitir emoção e contexto histórico ao leitor.",
+        "C": "O título 'To My Boy' indica que o poema é destinado exclusivamente a animais de estimação.",
+        "D": "Não é possível interpretar o sentido de um texto sem que ele esteja digitado."
+      },
+      "resposta": "B",
+      "comentario": "O manuscrito oferece uma camada adicional de interpretação, revelando aspectos da época e do estado emocional do autor no momento da criação."
+    },
+    {
+      "id": "base_premium_07",
+      "disciplina": "Raciocínio Lógico",
+      "pergunta": "Em um grupo de 100 ACS, 60 possuem curso de informática e 40 possuem curso de primeiros socorros. Se 20 possuem os dois cursos, quantos não possuem nenhum dos dois?",
+      "tags": ["Diagrama"],
+      "alternativas": {
+        "A": "10 ACS.",
+        "B": "20 ACS.",
+        "C": "30 ACS.",
+        "D": "40 ACS."
+      },
+      "resposta": "B",
+      "comentario": "Pelo diagrama de Venn: (60-20) só informática + (40-20) só socorros + 20 ambos = 40 + 20 + 20 = 80. Total (100) - 80 = 20."
+    },
+    {
+      "id": "base_premium_08",
+      "disciplina": "Informática Básica",
+      "pergunta": "Qual tecla de atalho é universalmente utilizada no Windows para 'Copiar' um item selecionado?",
+      "tags": ["Atalho"],
+      "alternativas": {
+        "A": "Ctrl + X.",
+        "B": "Ctrl + V.",
+        "C": "Ctrl + C.",
+        "D": "Ctrl + Z."
+      },
+      "resposta": "C",
+      "comentario": "Ctrl + C (Copy) copia, Ctrl + V (Paste) cola, Ctrl + X (Cut) recorta e Ctrl + Z desfaz."
+    },
+    {
+      "id": "base_premium_09",
+      "disciplina": "Língua Portuguesa",
+      "pergunta": "Analise as frases abaixo e classifique como Verdadeira (V) ou Falsa (F) quanto à concordância verbal:\n\n( ) Fazem dez anos que trabalho como ACS.\n( ) Haviam muitos focos de dengue no quintal.\n( ) Faz dez anos que trabalho como ACS.\n\nA sequência correta é:",
+      "tags": ["V/F", "Gramática"],
+      "alternativas": {
+        "A": "V - V - F",
+        "B": "F - F - V",
+        "C": "V - F - V",
+        "D": "F - V - F"
+      },
+      "resposta": "B",
+      "comentario": "O verbo 'fazer' indicando tempo decorrido e o verbo 'haver' no sentido de existir são impessoais (ficam no singular). Logo, 'Faz dez anos' e 'Havia muitos focos' são os corretos."
+    },
+    {
+      "id": "base_premium_10",
+      "disciplina": "Informática Básica",
+      "pergunta": "Qual componente do computador é considerado o 'cérebro' do sistema, responsável por processar as instruções dos programas?",
+      "tags": ["Hardware"],
+      "alternativas": {
+        "A": "Memória RAM.",
+        "B": "Disco Rígido (HD).",
+        "C": "Processador (CPU).",
+        "D": "Placa de Vídeo."
+      },
+      "resposta": "C",
+      "comentario": "A CPU (Central Processing Unit) ou Processador é o componente que executa os cálculos e processa os dados do computador."
+    },
+    {
+      "id": "base_premium_11",
+      "disciplina": "Raciocínio Lógico",
+      "pergunta": "Se todo ACS é um agente público, e João é um ACS, então:",
+      "tags": ["Silogismo"],
+      "alternativas": {
+        "A": "João não é um agente público.",
+        "B": "João é obrigatoriamente um agente público.",
+        "C": "Todo agente público é um ACS.",
+        "D": "João pode ou não ser um agente público."
+      },
+      "resposta": "B",
+      "comentario": "Trata-se de um silogismo lógico básico (Modus Ponens): se a premissa maior e a menor são verdadeiras, a conclusão é necessária."
+    },
+    {
+      "id": "base_premium_12",
+      "disciplina": "Língua Portuguesa",
+      "pergunta": "No trecho 'O ACS visitou a casa *onde* morava o paciente', a palavra em destaque indica:",
+      "tags": ["Gramática"],
+      "alternativas": {
+        "A": "Tempo.",
+        "B": "Modo.",
+        "C": "Lugar.",
+        "D": "Intensidade."
+      },
+      "resposta": "C",
+      "comentario": "O pronome relativo 'onde' é utilizado exclusivamente para indicar lugar físico."
+    },
+    {
+      "id": "base_premium_13",
+      "disciplina": "Informática Básica",
+      "pergunta": "O que significa a sigla WWW utilizada nos endereços de sites da internet?",
+      "tags": ["Internet"],
+      "alternativas": {
+        "A": "World Wide Web.",
+        "B": "Web World Wide.",
+        "C": "Work World Web.",
+        "D": "Wifi Wide Web."
+      },
+      "resposta": "A",
+      "comentario": "World Wide Web (Rede de Alcance Mundial) é o sistema de documentos em hipertexto interconectados que acessamos via internet."
+    },
+    {
+      "id": "base_premium_14",
+      "disciplina": "Raciocínio Lógico",
+      "pergunta": "Qual o próximo número da sequência: 2, 4, 8, 16, ...?",
+      "tags": ["Sequência"],
+      "alternativas": {
+        "A": "20.",
+        "B": "24.",
+        "C": "32.",
+        "D": "64."
+      },
+      "resposta": "C",
+      "comentario": "A sequência segue uma progressão geométrica onde cada número é o dobro do anterior. 16 * 2 = 32."
+    },
+    {
+      "id": "base_premium_15",
+      "disciplina": "Língua Portuguesa",
+      "pergunta": "Analise a frase: 'O Agente de Saúde foi *muito* eficiente'. A palavra destacada é um:",
+      "tags": ["Gramática"],
+      "alternativas": {
+        "A": "Substantivo.",
+        "B": "Adjetivo.",
+        "C": "Advérbio de intensidade.",
+        "D": "Verbo."
+      },
+      "resposta": "C",
+      "comentario": "A palavra 'muito' está intensificando o adjetivo 'eficiente', cumprindo a função de advérbio."
     }
   ]
 }
