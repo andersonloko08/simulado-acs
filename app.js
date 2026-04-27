@@ -40,14 +40,20 @@ themeToggleBtn.addEventListener('click', () => {
 // Initialization
 async function initApp() {
     try {
-        const response = await fetch("simulado_completo.json?v=3");
+        const response = await fetch("simulado_completo.json?v=4");
         if (!response.ok) throw new Error("Erro ao carregar as questões");
         const data = await response.json();
         
-        questoesDB = data.questoes || [];
+        const todasQuestoes = data.questoes || [];
+        const emRevisao = todasQuestoes.filter(q => q.revisao === true).length;
+        questoesDB = todasQuestoes.filter(q => !q.revisao);
         
         if (questoesDB.length > 0) {
-            elStats.innerHTML = `<div class="stat-box"><i class="fa-solid fa-database"></i> Banco atualizado com <strong>${questoesDB.length}</strong> questões.</div>`;
+            let statusText = `<i class="fa-solid fa-database"></i> <strong>${questoesDB.length}</strong> questões ativas`;
+            if (emRevisao > 0) {
+                statusText += ` <span style="color: var(--text-muted); font-size: 0.85em;">+ ${emRevisao} em revisão</span>`;
+            }
+            elStats.innerHTML = `<div class="stat-box">${statusText}</div>`;
             elStartBtn.disabled = false;
             elStartBtn.innerHTML = '<i class="fa-solid fa-play"></i> Iniciar Simulado';
             
@@ -75,29 +81,25 @@ async function initApp() {
 function updateAvailableCount() {
     const includeImages = document.getElementById('opt-images').checked;
     const includeVF = document.getElementById('opt-vf').checked;
-    const includeMulti = document.getElementById('opt-multipla').checked;
     const includeInterp = document.getElementById('opt-interpretação').checked;
     
     const isCustom = document.querySelector('input[name="mode-count"][value="custom"]').checked;
     const inputCount = document.getElementById('opt-count');
     const selectedSubjects = Array.from(document.querySelectorAll('input[name="subject"]:checked')).map(cb => cb.value);
 
-    const anyFormatSelected = includeImages || includeVF || includeMulti || includeInterp;
+    const anyFormatSelected = includeImages || includeVF || includeInterp;
 
-    // Função interna para filtrar o pool baseado em qualquer formato (Lógica de OU)
+    // Filtrar pool baseado nos formatos selecionados (lógica OU)
     const filterByFormat = (itemPool) => {
         if (!anyFormatSelected) return itemPool;
         return itemPool.filter(q => {
             const isVF = q.pergunta.includes("(V)") || q.pergunta.includes("(F)") || (q.tags && q.tags.includes("V/F"));
             const isInterp = q.pergunta.toLowerCase().includes("texto") || q.pergunta.toLowerCase().includes("leia") || (q.tags && q.tags.includes("Interpretação"));
-            const isMulti = !isVF && !isInterp;
             const hasImage = !!q.imagem;
 
-            // Se a questão bater com QUALQUER um dos formatos marcados, ela passa
             if (includeImages && hasImage) return true;
             if (includeVF && isVF) return true;
             if (includeInterp && isInterp) return true;
-            if (includeMulti && isMulti) return true;
 
             return false;
         });
@@ -213,7 +215,6 @@ window.reportError = function(index) {
 window.startQuiz = function() {
     const includeImages = document.getElementById('opt-images') ? document.getElementById('opt-images').checked : false;
     const includeVF = document.getElementById('opt-vf') ? document.getElementById('opt-vf').checked : false;
-    const includeMulti = document.getElementById('opt-multipla') ? document.getElementById('opt-multipla').checked : false;
     const includeInterp = document.getElementById('opt-interpretação') ? document.getElementById('opt-interpretação').checked : false;
     const totalDesired = parseInt(document.getElementById('opt-count').value) || 40;
     const selectedSubjects = Array.from(document.querySelectorAll('input[name="subject"]:checked')).map(cb => cb.value);
@@ -224,7 +225,7 @@ window.startQuiz = function() {
     }
 
     // Se NENHUM formato estiver marcado, consideramos que quer TODOS (fallback)
-    const anyFormatSelected = includeImages || includeVF || includeMulti || includeInterp;
+    const anyFormatSelected = includeImages || includeVF || includeInterp;
 
     // Filtrar o pool de questões
     let pool = questoesDB.filter(q => selectedSubjects.includes(q.disciplina));
@@ -233,13 +234,11 @@ window.startQuiz = function() {
         pool = pool.filter(q => {
             const isVF = q.pergunta.includes("(V)") || q.pergunta.includes("(F)") || (q.tags && q.tags.includes("V/F"));
             const isInterp = q.pergunta.toLowerCase().includes("texto") || q.pergunta.toLowerCase().includes("leia") || (q.tags && q.tags.includes("Interpretação"));
-            const isMulti = !isVF && !isInterp;
             const hasImage = !!q.imagem;
 
             if (includeImages && hasImage) return true;
             if (includeVF && isVF) return true;
             if (includeInterp && isInterp) return true;
-            if (includeMulti && isMulti) return true;
             
             return false;
         });
@@ -377,7 +376,7 @@ function renderQuestion(index) {
         </div>
         <h3>Questão ${index + 1} de ${simuladoAtual.length}</h3>
         <div class="question-text">${escapeHtml(q.pergunta)}</div>
-        ${q.imagem ? `<div class="question-image-container"><img src="${q.imagem}" class="question-image" onclick="window.open('${q.imagem}', '_blank')" title="Clique para ampliar" alt="Imagem da questão"></div>` : ''}
+        ${q.imagem ? `<div class="question-image-container"><img src="${q.imagem}" class="question-image" onclick="window.open('${q.imagem}', '_blank')" title="Clique para ampliar" alt="Imagem da questão" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=padding:20px;text-align:center;color:var(--danger);border:2px_dashed_var(--danger-light);border-radius:12px;><i class=fa-solid_fa-image-slash></i> Imagem indisponível</div>';"></div>` : ''}
         
         <div class="options-grid" id="options-${index}">
     `;
