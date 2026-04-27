@@ -2901,6 +2901,454 @@
                                           },
                          "resposta":  "C",
                          "comentario":  "A palavra \u0027muito\u0027 está intensificando o adjetivo \u0027eficiente\u0027, cumprindo a função de advérbio."
+                     },
+                     {
+                         "id":  "lei_sus_01",
+                         "disciplina":  "Conhecimentos Específicos",
+                         "pergunta":  "De acordo com a Lei nº 8.080/1990 (Lei Orgânica da Saúde), são princípios do SUS, EXCETO:",
+                         "tags":  [
+                                      "Legislação SUS"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "Universalidade de acesso aos serviços de saúde.",
+                                              "B":  "Integralidade de assistência.",
+                                              "C":  "Centralização político-administrativa na esfera federal.",
+                                              "D":  "Igualdade da assistência à saúde, sem preconceitos ou privilégios."
+                                          },
+                         "resposta":  "C",
+                         "comentario":  "O princípio correto é a DESCENTRALIZAÇÃO político-administrativa, com direção única em cada esfera de governo, e não a centralização."
+                     },
+                     {
+                         "id":  "lei_sus_02",
+                         "disciplina":  "Conhecimentos Específicos",
+                         "pergunta":  "Segundo a Lei nº 8.080/1990, a saúde é um direito fundamental do ser humano, devendo o Estado:",
+                         "tags":  [
+                                      "Legislação SUS"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "Prover as condições indispensáveis ao seu pleno exercício.",
+                                              "B":  "Garantir saúde apenas aos cidadãos que contribuem com a previdência.",
+                                              "C":  "Delegar integralmente a responsabilidade à iniciativa privada.",
+                                              "D":  "Restringir o atendimento à população de baixa renda."
+                                          },
+                         "resposta":  "A",
+                         "comentario":  "Art. 2º da Lei 8.080: A saúde é direito fundamental e o Estado deve prover condições para seu pleno exercício."
+                     },
+                     {
+                         "id":  "lei_sus_03",
+                         "disciplina":  "Conhecimentos Específicos",
+                         "pergunta":  "A participação da iniciativa privada no Sistema Único de Saúde (SUS), conforme a Lei nº 8.080/1990, ocorre em caráter:",
+                         "tags":  [
+                                      "Legislação SUS"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "Preferencial.",
+                                              "B":  "Substitutivo.",
+                                              "C":  "Complementar.",
+                                              "D":  "Exclusivo em áreas rurais."
+                                          },
+                         "resposta":  "C",
+                         "comentario":  "Art. 4º, §2º: A iniciativa privada poderá participar do SUS em caráter COMPLEMENTAR."
+                     },
+                     {
+                         "id":  "lei_8142_01",
+                         "disciplina":  "Conhecimentos Específicos",
+                         "pergunta":  "De acordo com a Lei nº 8.142/1990, as Conferências de Saúde devem ser convocadas a cada:",
+                         "tags":  [
+                                      "Legislação SUS"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "1 ano.",
+                                              "B":  "2 anos.",
+                                              "C":  "4 anos.",
+                                              "D":  "6 anos."
+                                          },
+                         "resposta":  "C",
+                         "comentario":  "Art. 1º, §1º da Lei 8.142: A Conferência de Saúde reunir-se-á a cada 4 anos."
+                     },
+                     {
+                         "id":  "lei_8142_02",
+                         "disciplina":  "Conhecimentos Específicos",
+                         "pergunta":  "Os Conselhos de Saúde, conforme a Lei nº 8.142/1990, possuem caráter:",
+                         "tags":  [
+                                      "Legislação SUS"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "Temporário e consultivo.",
+                                              "B":  "Permanente e deliberativo.",
+                                              "C":  "Temporário e deliberativo.",
+                                              "D":  "Permanente e consultivo."
+                                          },
+                         "resposta":  "B",
+                         "comentario":  "Art. 1º, §2º: O Conselho de Saúde, em caráter PERMANENTE e DELIBERATIVO."
+                     },
+                     {
+                         "id":  "lei_11350_01",
+                         "disciplina":  "Conhecimentos Específicos",
+                         "pergunta":  "Conforme a Lei nº 11.350/2006, que regulamenta as atividades do ACS, é requisito para o exercício da atividade:",
+                         "tags":  [
+                                      "Legislação ACS"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "Possuir diploma de nível superior na área da saúde.",
+                                              "B":  "Residir na área da comunidade em que atuar, desde a data da publicação do edital.",
+                                              "C":  "Ter experiência prévia de 2 anos em hospitais.",
+                                              "D":  "Ser aprovado em exame de proficiência em língua estrangeira."
+                                          },
+                         "resposta":  "B",
+                         "comentario":  "A Lei 11.350 exige que o ACS resida na comunidade onde irá atuar, garantindo vínculo e conhecimento do território."
+                     },
+                     {
+                         "id":  "lei_11350_02",
+                         "disciplina":  "Conhecimentos Específicos",
+                         "pergunta":  "Segundo a Lei nº 11.350/2006, NÃO é atribuição do Agente Comunitário de Saúde:",
+                         "tags":  [
+                                      "Legislação ACS"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "Realizar o cadastramento das famílias da sua microárea.",
+                                              "B":  "Prescrever medicamentos para doenças crônicas.",
+                                              "C":  "Orientar famílias quanto à utilização dos serviços de saúde disponíveis.",
+                                              "D":  "Acompanhar, por meio de visita domiciliar, todas as famílias sob sua responsabilidade."
+                                          },
+                         "resposta":  "B",
+                         "comentario":  "A prescrição de medicamentos é ato privativo de profissionais habilitados (médicos, dentistas). O ACS não prescreve."
+                     },
+                     {
+                         "id":  "pnab_01",
+                         "disciplina":  "Conhecimentos Específicos",
+                         "pergunta":  "De acordo com a Política Nacional de Atenção Básica (PNAB), a Estratégia Saúde da Família (ESF) é composta, no mínimo, por:",
+                         "tags":  [
+                                      "PNAB"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "Médico, enfermeiro, técnico de enfermagem e agentes comunitários de saúde.",
+                                              "B":  "Médico, farmacêutico, nutricionista e assistente social.",
+                                              "C":  "Enfermeiro, psicólogo, fisioterapeuta e agente de endemias.",
+                                              "D":  "Médico, dentista, fonoaudiólogo e terapeuta ocupacional."
+                                          },
+                         "resposta":  "A",
+                         "comentario":  "A equipe mínima da ESF é: médico, enfermeiro, técnico ou auxiliar de enfermagem e ACS."
+                     },
+                     {
+                         "id":  "pnab_02",
+                         "disciplina":  "Conhecimentos Específicos",
+                         "pergunta":  "Na Atenção Básica, o princípio da \u0027longitudinalidade do cuidado\u0027 significa:",
+                         "tags":  [
+                                      "PNAB"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "Atender o paciente uma única vez e encaminhá-lo para a atenção especializada.",
+                                              "B":  "Acompanhar o usuário ao longo do tempo, mantendo vínculo contínuo com a equipe de saúde.",
+                                              "C":  "Realizar procedimentos cirúrgicos na Unidade Básica de Saúde.",
+                                              "D":  "Limitar o atendimento a 15 minutos por paciente."
+                                          },
+                         "resposta":  "B",
+                         "comentario":  "Longitudinalidade é o acompanhamento contínuo do mesmo paciente ao longo do tempo pela mesma equipe."
+                     },
+                     {
+                         "id":  "pnab_03",
+                         "disciplina":  "Conhecimentos Específicos",
+                         "pergunta":  "O processo de \u0027adscrição de clientela\u0027 na Atenção Básica refere-se a:",
+                         "tags":  [
+                                      "PNAB"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "A cobrança de mensalidades dos usuários do SUS.",
+                                              "B":  "A definição de um número máximo de famílias sob responsabilidade de cada equipe em um território delimitado.",
+                                              "C":  "A transferência de pacientes para hospitais particulares.",
+                                              "D":  "O cadastramento exclusivo de pacientes com plano de saúde."
+                                          },
+                         "resposta":  "B",
+                         "comentario":  "Adscrição é a vinculação de uma população definida a uma equipe de saúde dentro de um território."
+                     },
+                     {
+                         "id":  "esus_01",
+                         "disciplina":  "Conhecimentos Específicos",
+                         "pergunta":  "No e-SUS Atenção Primária, a \u0027Ficha de Visita Domiciliar e Territorial\u0027 é preenchida exclusivamente pelo:",
+                         "tags":  [
+                                      "e-SUS"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "Médico da equipe.",
+                                              "B":  "Enfermeiro supervisor.",
+                                              "C":  "Agente Comunitário de Saúde (ACS).",
+                                              "D":  "Recepcionista da UBS."
+                                          },
+                         "resposta":  "C",
+                         "comentario":  "A Ficha de Visita Domiciliar é instrumento exclusivo do ACS no e-SUS AB."
+                     },
+                     {
+                         "id":  "vigil_01",
+                         "disciplina":  "Conhecimentos Específicos",
+                         "pergunta":  "A dengue, a zika e a chikungunya são transmitidas pelo mesmo vetor. Qual é o mosquito responsável pela transmissão dessas três arboviroses?",
+                         "tags":  [
+                                      "Vigilância"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "Anopheles darlingi.",
+                                              "B":  "Culex quinquefasciatus.",
+                                              "C":  "Aedes aegypti.",
+                                              "D":  "Lutzomyia longipalpis."
+                                          },
+                         "resposta":  "C",
+                         "comentario":  "O Aedes aegypti é o vetor comum da Dengue, Zika e Chikungunya no Brasil."
+                     },
+                     {
+                         "id":  "vigil_02",
+                         "disciplina":  "Conhecimentos Específicos",
+                         "pergunta":  "A caderneta de vacinação da criança prevê a aplicação da vacina contra Hepatite B. Qual é o momento ideal para aplicação da primeira dose?",
+                         "tags":  [
+                                      "Imunização"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "Aos 6 meses de idade.",
+                                              "B":  "Nas primeiras 12 horas de vida do recém-nascido.",
+                                              "C":  "Ao completar 2 anos de idade.",
+                                              "D":  "Apenas na adolescência."
+                                          },
+                         "resposta":  "B",
+                         "comentario":  "A primeira dose da Hepatite B deve ser aplicada idealmente nas primeiras 12 horas de vida."
+                     },
+                     {
+                         "id":  "vigil_03",
+                         "disciplina":  "Conhecimentos Específicos",
+                         "pergunta":  "No acompanhamento de pacientes com Diabetes Mellitus tipo 2, o ACS deve orientar sobre a importância de:",
+                         "tags":  [
+                                      "Doenças Crônicas"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "Manter uma dieta rica em açúcares para garantir energia.",
+                                              "B":  "Realizar monitoramento glicêmico, manter alimentação saudável e praticar atividade física regular.",
+                                              "C":  "Suspender o uso de insulina quando se sentir melhor.",
+                                              "D":  "Evitar consultas médicas frequentes para não sobrecarregar o sistema."
+                                          },
+                         "resposta":  "B",
+                         "comentario":  "O controle do diabetes envolve monitoramento, dieta equilibrada e exercícios, além da adesão ao tratamento medicamentoso."
+                     },
+                     {
+                         "id":  "pt_novo_01",
+                         "disciplina":  "Língua Portuguesa",
+                         "pergunta":  "Assinale a alternativa em que o uso da crase está CORRETO:",
+                         "tags":  [
+                                      "Gramática"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "Fomos à pé até a UBS.",
+                                              "B":  "O ACS chegou à unidade de saúde às 8 horas.",
+                                              "C":  "Ele se referiu à ela durante a reunião.",
+                                              "D":  "A gestante foi à consultar o médico."
+                                          },
+                         "resposta":  "B",
+                         "comentario":  "\u0027À unidade\u0027 (preposição + artigo feminino) e \u0027às 8 horas\u0027 (horas determinadas) exigem crase."
+                     },
+                     {
+                         "id":  "pt_novo_02",
+                         "disciplina":  "Língua Portuguesa",
+                         "pergunta":  "Na frase \u0027Os agentes comunitários de saúde ____ ao treinamento e ____ as orientações.\u0027, as formas verbais que completam corretamente são:",
+                         "tags":  [
+                                      "Gramática"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "compareceram / seguiu",
+                                              "B":  "compareceu / seguiram",
+                                              "C":  "compareceram / seguiram",
+                                              "D":  "compareceu / seguiu"
+                                          },
+                         "resposta":  "C",
+                         "comentario":  "O sujeito \u0027Os agentes\u0027 está no plural, exigindo verbos no plural: compareceram e seguiram."
+                     },
+                     {
+                         "id":  "pt_novo_03",
+                         "disciplina":  "Língua Portuguesa",
+                         "pergunta":  "Leia o trecho:\n\n\u0027O ACS é o profissional que conhece de perto a realidade da comunidade. Ele identifica as famílias em situação de risco e atua como ponte entre os moradores e a equipe de saúde.\u0027\n\nA expressão \u0027atua como ponte\u0027 é uma figura de linguagem chamada:",
+                         "tags":  [
+                                      "Interpretação"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "Hipérbole.",
+                                              "B":  "Metáfora.",
+                                              "C":  "Onomatopeia.",
+                                              "D":  "Pleonasmo."
+                                          },
+                         "resposta":  "B",
+                         "comentario":  "Metáfora é a comparação implícita (sem \u0027como\u0027 comparativo de semelhança): o ACS não é literalmente uma ponte, mas faz a ligação entre comunidade e UBS."
+                     },
+                     {
+                         "id":  "pt_novo_04",
+                         "disciplina":  "Língua Portuguesa",
+                         "pergunta":  "Assinale a alternativa cujas palavras estão escritas de acordo com a norma ortográfica vigente:",
+                         "tags":  [
+                                      "Gramática"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "Previlégio, advinhar, excessão.",
+                                              "B":  "Privilégio, adivinhar, exceção.",
+                                              "C":  "Previlégio, adivinhar, excessão.",
+                                              "D":  "Privilégio, advinhar, exceção."
+                                          },
+                         "resposta":  "B",
+                         "comentario":  "As grafias corretas são: privilégio (com \u0027i\u0027), adivinhar (com \u0027di\u0027) e exceção (com \u0027ç\u0027)."
+                     },
+                     {
+                         "id":  "pt_novo_05",
+                         "disciplina":  "Língua Portuguesa",
+                         "pergunta":  "Leia o texto:\n\n\u0027A Atenção Básica constitui-se como porta de entrada preferencial do SUS, sendo responsável pela coordenação do cuidado e pela ordenação das redes de atenção à saúde.\u0027\n\nO termo \u0027porta de entrada\u0027 no texto significa:",
+                         "tags":  [
+                                      "Interpretação"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "A porta física da Unidade Básica de Saúde.",
+                                              "B":  "O primeiro ponto de contato do cidadão com o sistema de saúde.",
+                                              "C":  "Uma barreira burocrática para o atendimento.",
+                                              "D":  "O setor de emergência dos hospitais."
+                                          },
+                         "resposta":  "B",
+                         "comentario":  "\u0027Porta de entrada\u0027 é uma expressão técnica que indica o ponto inicial de acesso do usuário ao SUS."
+                     },
+                     {
+                         "id":  "rl_novo_01",
+                         "disciplina":  "Raciocínio Lógico",
+                         "pergunta":  "Qual é o próximo número da sequência: 3, 6, 12, 24, ...?",
+                         "tags":  [
+                                      "Sequência"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "30.",
+                                              "B":  "36.",
+                                              "C":  "48.",
+                                              "D":  "96."
+                                          },
+                         "resposta":  "C",
+                         "comentario":  "Cada número é o dobro do anterior. 24 × 2 = 48."
+                     },
+                     {
+                         "id":  "rl_novo_02",
+                         "disciplina":  "Raciocínio Lógico",
+                         "pergunta":  "Em uma UBS, há 120 pacientes cadastrados. Se 3/5 deles são mulheres, quantos são homens?",
+                         "tags":  [
+                                      "Cálculo"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "24 homens.",
+                                              "B":  "48 homens.",
+                                              "C":  "60 homens.",
+                                              "D":  "72 homens."
+                                          },
+                         "resposta":  "B",
+                         "comentario":  "3/5 de 120 = 72 mulheres. 120 - 72 = 48 homens."
+                     },
+                     {
+                         "id":  "rl_novo_03",
+                         "disciplina":  "Raciocínio Lógico",
+                         "pergunta":  "Se todo ACS realiza visita domiciliar, e João é ACS, pode-se concluir que:",
+                         "tags":  [
+                                      "Lógica"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "João não precisa fazer visita domiciliar.",
+                                              "B":  "João realiza visita domiciliar.",
+                                              "C":  "Apenas alguns ACS fazem visitas.",
+                                              "D":  "João é médico da equipe."
+                                          },
+                         "resposta":  "B",
+                         "comentario":  "Silogismo simples: Se todo ACS faz visita e João é ACS, então João faz visita."
+                     },
+                     {
+                         "id":  "rl_novo_04",
+                         "disciplina":  "Raciocínio Lógico",
+                         "pergunta":  "Uma equipe de saúde atende 800 famílias por mês. Se o número de famílias aumentar 25%, quantas famílias serão atendidas?",
+                         "tags":  [
+                                      "Cálculo"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "825 famílias.",
+                                              "B":  "900 famílias.",
+                                              "C":  "1.000 famílias.",
+                                              "D":  "1.200 famílias."
+                                          },
+                         "resposta":  "C",
+                         "comentario":  "25% de 800 = 200. Total: 800 + 200 = 1.000 famílias."
+                     },
+                     {
+                         "id":  "info_novo_01",
+                         "disciplina":  "Informática Básica",
+                         "pergunta":  "No Microsoft Word, o atalho de teclado Ctrl+S é utilizado para:",
+                         "tags":  [
+                                      "Word"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "Selecionar todo o texto.",
+                                              "B":  "Salvar o documento atual.",
+                                              "C":  "Sublinhar o texto selecionado.",
+                                              "D":  "Inserir uma tabela."
+                                          },
+                         "resposta":  "B",
+                         "comentario":  "Ctrl+S (Save) salva o documento. Ctrl+A seleciona tudo e Ctrl+U sublinha."
+                     },
+                     {
+                         "id":  "info_novo_02",
+                         "disciplina":  "Informática Básica",
+                         "pergunta":  "No Microsoft Excel, para somar os valores das células A1 até A10, a fórmula correta é:",
+                         "tags":  [
+                                      "Excel"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "=SOMA(A1:A10)",
+                                              "B":  "=SOMAR(A1-A10)",
+                                              "C":  "=TOTAL(A1;A10)",
+                                              "D":  "=ADICIONAR(A1+A10)"
+                                          },
+                         "resposta":  "A",
+                         "comentario":  "A função correta é =SOMA() com o intervalo separado por dois-pontos (:)."
+                     },
+                     {
+                         "id":  "info_novo_03",
+                         "disciplina":  "Informática Básica",
+                         "pergunta":  "Qual dos seguintes é considerado um software MALICIOSO (malware)?",
+                         "tags":  [
+                                      "Segurança"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "Microsoft Word.",
+                                              "B":  "Google Chrome.",
+                                              "C":  "Cavalo de Troia (Trojan).",
+                                              "D":  "Windows Defender."
+                                          },
+                         "resposta":  "C",
+                         "comentario":  "Cavalo de Troia é um tipo de malware que se disfarça de programa legítimo para infectar o computador."
+                     },
+                     {
+                         "id":  "info_novo_04",
+                         "disciplina":  "Informática Básica",
+                         "pergunta":  "No Windows, a Lixeira serve para:",
+                         "tags":  [
+                                      "Windows"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "Armazenar vírus detectados pelo antivírus.",
+                                              "B":  "Guardar temporariamente arquivos excluídos, permitindo sua restauração.",
+                                              "C":  "Compactar arquivos para economizar espaço.",
+                                              "D":  "Fazer backup automático de todos os documentos."
+                                          },
+                         "resposta":  "B",
+                         "comentario":  "A Lixeira armazena temporariamente os arquivos excluídos, permitindo recuperá-los antes da exclusão definitiva."
+                     },
+                     {
+                         "id":  "info_novo_05",
+                         "disciplina":  "Informática Básica",
+                         "pergunta":  "O protocolo utilizado para acessar páginas de internet de forma segura, identificado pelo cadeado no navegador, é o:",
+                         "tags":  [
+                                      "Internet"
+                                  ],
+                         "alternativas":  {
+                                              "A":  "HTTP.",
+                                              "B":  "FTP.",
+                                              "C":  "HTTPS.",
+                                              "D":  "SMTP."
+                                          },
+                         "resposta":  "C",
+                         "comentario":  "HTTPS (HyperText Transfer Protocol Secure) é a versão segura do HTTP, com criptografia SSL/TLS."
                      }
                  ]
 }
