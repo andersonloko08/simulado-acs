@@ -123,7 +123,7 @@ function renderNavGrid() {
     for (let i = 0; i < simuladoAtual.length; i++) {
         const state = respostasUsuario[i];
         let classes = 'question-nav-btn';
-        if (state.selecionada) classes += ' answered';
+        if (state.conferida) classes += ' answered';
         if (i === currentQuestionIndex) classes += ' active';
         
         html += `<button class="${classes}" onclick="jumpToQuestion(${i})" id="nav-btn-${i}">${i + 1}</button>`;
@@ -145,7 +145,7 @@ function updateNavGridSelection() {
         const state = respostasUsuario[i];
         
         btn.className = 'question-nav-btn';
-        if (state.selecionada) btn.classList.add('answered');
+        if (state.conferida) btn.classList.add('answered');
         if (i === currentQuestionIndex) btn.classList.add('active');
     }
 }
@@ -265,7 +265,7 @@ window.prevQuestion = function() {
 window.confirmFinish = function() {
     let unAnswered = 0;
     for (const key in respostasUsuario) {
-        if (!respostasUsuario[key].selecionada) unAnswered++;
+        if (!respostasUsuario[key].conferida) unAnswered++;
     }
     
     let msg = "Tem certeza que deseja encerrar o simulado?";
@@ -342,7 +342,7 @@ function showFeedbackUI(qIndex) {
 function updateProgress() {
     let respondidas = 0;
     for (const key in respostasUsuario) {
-        if (respostasUsuario[key].selecionada !== null) respondidas++;
+        if (respostasUsuario[key].conferida) respondidas++;
     }
     
     const total = simuladoAtual.length;
