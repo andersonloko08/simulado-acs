@@ -310,16 +310,28 @@ window.finish = function() {
         }
     });
 
+    const pesos = {
+        "Língua Portuguesa": 2.0,
+        "Raciocínio Lógico": 2.0,
+        "Informática Básica": 2.0,
+        "Conhecimentos Específicos": 3.0
+    };
+
     let acertos = 0;
     const total = simuladoAtual.length;
     let subjectStats = {};
+    let totalPontos = 0;
+    let maxPontos = 0;
 
     // Iniciar contadores
     simuladoAtual.forEach(q => {
+        const peso = pesos[q.disciplina] || 1;
         if (!subjectStats[q.disciplina]) {
-            subjectStats[q.disciplina] = { total: 0, correct: 0 };
+            subjectStats[q.disciplina] = { total: 0, correct: 0, peso: peso, pontosPossiveis: 0, pontosGanhos: 0 };
         }
         subjectStats[q.disciplina].total++;
+        subjectStats[q.disciplina].pontosPossiveis += peso;
+        maxPontos += peso;
     });
 
     for (const key in respostasUsuario) {
@@ -328,28 +340,37 @@ window.finish = function() {
         if (state.selecionada === state.correta) {
             acertos++;
             subjectStats[q.disciplina].correct++;
+            subjectStats[q.disciplina].pontosGanhos += subjectStats[q.disciplina].peso;
+            totalPontos += subjectStats[q.disciplina].peso;
         }
     }
 
     // Montar HTML do detalhamento por matéria
-    let breakdownHtml = '<h4 style="margin: 0 0 10px 0; font-size: 0.9rem; color: var(--text);">Desempenho por Disciplina:</h4>';
+    let breakdownHtml = '<h4 style="margin: 0 0 10px 0; font-size: 0.9rem; color: var(--text);">Desempenho por Disciplina (com Pesos):</h4>';
     for (const [subj, stats] of Object.entries(subjectStats)) {
         const perc = Math.round((stats.correct / stats.total) * 100) || 0;
         let color = perc >= 50 ? 'var(--success)' : 'var(--danger)';
         breakdownHtml += `
-            <div style="display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 0.85rem; padding-bottom: 5px; border-bottom: 1px solid rgba(0,0,0,0.05);">
-                <span>${subj}</span>
-                <span style="color: ${color}; font-weight: bold;">${stats.correct}/${stats.total} (${perc}%)</span>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.85rem; padding-bottom: 8px; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                <span style="display: flex; flex-direction: column;">
+                    <strong>${subj}</strong>
+                    <span style="font-size: 0.75rem; color: var(--text-muted);">Peso ${stats.peso.toFixed(1)} / Questão</span>
+                </span>
+                <span style="display: flex; flex-direction: column; text-align: right;">
+                    <span style="color: ${color}; font-weight: bold;">${stats.pontosGanhos.toFixed(1)} / ${stats.pontosPossiveis.toFixed(1)} pts</span>
+                    <span style="font-size: 0.75rem; color: var(--text-muted);">${stats.correct}/${stats.total} acertos (${perc}%)</span>
+                </span>
             </div>
         `;
     }
     const breakdownEl = document.getElementById('subject-breakdown');
     if (breakdownEl) breakdownEl.innerHTML = breakdownHtml;
 
-    const percentage = total > 0 ? Math.round((acertos / total) * 100) : 0;
+    const percentage = maxPontos > 0 ? Math.round((totalPontos / maxPontos) * 100) : 0;
 
-    document.getElementById('score-correct').innerText = acertos;
-    document.getElementById('score-total').innerText = total;
+    // Atualizar UI com pontos em vez de acertos puros
+    document.getElementById('score-correct').innerText = totalPontos.toFixed(1) + " pts";
+    document.getElementById('score-total').innerText = maxPontos.toFixed(1) + " pts";
     document.getElementById('score-percentage').innerText = `${percentage}%`;
 
     const circlePath = document.getElementById('score-circle-path');
