@@ -50,6 +50,19 @@ async function initApp() {
             elStats.innerHTML = `<div class="stat-box"><i class="fa-solid fa-database"></i> Banco atualizado com <strong>${questoesDB.length}</strong> questões.</div>`;
             elStartBtn.disabled = false;
             elStartBtn.innerHTML = '<i class="fa-solid fa-play"></i> Iniciar Simulado';
+            
+            // Atualizar contadores por matéria
+            document.getElementById('count-pt').innerText = `(${questoesDB.filter(q => q.disciplina === "Língua Portuguesa").length})`;
+            document.getElementById('count-rl').innerText = `(${questoesDB.filter(q => q.disciplina === "Raciocínio Lógico").length})`;
+            document.getElementById('count-info').innerText = `(${questoesDB.filter(q => q.disciplina === "Informática Básica").length})`;
+            document.getElementById('count-ce').innerText = `(${questoesDB.filter(q => q.disciplina === "Conhecimentos Específicos").length})`;
+
+            // Adicionar listeners para atualização dinâmica do total
+            document.querySelectorAll('.quiz-options input, .quiz-options select').forEach(el => {
+                el.addEventListener('change', updateAvailableCount);
+            });
+            updateAvailableCount();
+            
         } else {
             throw new Error("Banco de questões vazio.");
         }
@@ -58,6 +71,117 @@ async function initApp() {
         elStats.innerHTML = `<div class="stat-box" style="color: var(--danger);"><i class="fa-solid fa-triangle-exclamation"></i> Erro ao carregar as questões. Tente recarregar a página ou verifique se o arquivo simulado_completo.json está acessível.</div>`;
     }
 }
+
+function updateAvailableCount() {
+    const includeImages = document.getElementById('opt-images').checked;
+    const includeVF = document.getElementById('opt-vf').checked;
+    const includeMulti = document.getElementById('opt-multipla').checked;
+    const includeInterp = document.getElementById('opt-interpretação').checked;
+    
+    const isCustom = document.querySelector('input[name="mode-count"][value="custom"]').checked;
+    const inputCount = document.getElementById('opt-count');
+    const selectedSubjects = Array.from(document.querySelectorAll('input[name="subject"]:checked')).map(cb => cb.value);
+
+    const anyFormatSelected = includeImages || includeVF || includeMulti || includeInterp;
+
+    // Função interna para filtrar o pool baseado em qualquer formato (Lógica de OU)
+    const filterByFormat = (itemPool) => {
+        if (!anyFormatSelected) return itemPool;
+        return itemPool.filter(q => {
+            const isVF = q.pergunta.includes("(V)") || q.pergunta.includes("(F)") || (q.tags && q.tags.includes("V/F"));
+            const isInterp = q.pergunta.toLowerCase().includes("texto") || q.pergunta.toLowerCase().includes("leia") || (q.tags && q.tags.includes("Interpretação"));
+            const isMulti = !isVF && !isInterp;
+            const hasImage = !!q.imagem;
+
+            // Se a questão bater com QUALQUER um dos formatos marcados, ela passa
+            if (includeImages && hasImage) return true;
+            if (includeVF && isVF) return true;
+            if (includeInterp && isInterp) return true;
+            if (includeMulti && isMulti) return true;
+
+            return false;
+        });
+    };
+
+    // Atualizar contadores individuais por matéria
+    const subjects = [
+        { id: 'count-pt', name: "Língua Portuguesa" },
+        { id: 'count-rl', name: "Raciocínio Lógico" },
+        { id: 'count-info', name: "Informática Básica" },
+        { id: 'count-ce', name: "Conhecimentos Específicos" }
+    ];
+
+    subjects.forEach(s => {
+        const subjectPool = questoesDB.filter(q => q.disciplina === s.name);
+        const filteredSubjectPool = filterByFormat(subjectPool);
+        const countEl = document.getElementById(s.id);
+        if (countEl) {
+            countEl.innerText = `(${filteredSubjectPool.length})`;
+            countEl.style.color = filteredSubjectPool.length === 0 ? 'var(--danger)' : 'var(--text-muted)';
+        }
+    });
+
+    // Pool final baseado em matérias selecionadas
+    let pool = questoesDB.filter(q => selectedSubjects.includes(q.disciplina));
+    pool = filterByFormat(pool);
+
+    const available = pool.length;
+    inputCount.max = available;
+    
+    // Validar modo Padrão Edital (40 questões)
+    const radio40 = document.querySelector('input[name="mode-count"][value="40"]');
+    const label40 = radio40.closest('label');
+    const warning40 = document.getElementById('count-warning');
+    
+    if (available < 40) {
+        radio40.disabled = true;
+        label40.style.opacity = "0.5";
+        label40.style.cursor = "not-allowed";
+        if (warning40) warning40.style.display = "block";
+        
+        // Se estava marcado, força a troca para personalizado
+        if (radio40.checked) {
+            document.querySelector('input[name="mode-count"][value="custom"]').checked = true;
+            toggleCountMode();
+        }
+    } else {
+        radio40.disabled = false;
+        label40.style.opacity = "1";
+        label40.style.cursor = "pointer";
+        if (warning40) warning40.style.display = "none";
+    }
+
+    // Se a mudança veio de um FILTRO (não do próprio input de número), resetamos para o máximo
+    const lastEvent = window.event;
+    const isFilterChange = lastEvent && lastEvent.target && lastEvent.target.type === 'checkbox';
+
+    if (isCustom && isFilterChange) {
+        inputCount.value = available;
+    }
+
+    // Garante que o valor manual nunca ultrapasse o disponível
+    if (parseInt(inputCount.value) > available) {
+        inputCount.value = available;
+    }
+
+    const totalDesired = isCustom ? parseInt(inputCount.value) || 1 : 40;
+    const finalCount = Math.min(available, totalDesired);
+    
+    const startBtn = document.getElementById('start-btn');
+    if (available === 0) {
+        startBtn.disabled = true;
+        startBtn.innerHTML = '<i class="fa-solid fa-ban"></i> Nenhuma questão encontrada';
+    } else {
+        startBtn.disabled = false;
+        startBtn.innerHTML = `<i class="fa-solid fa-play"></i> Iniciar com ${finalCount} questões`;
+    }
+}
+
+window.toggleCountMode = function() {
+    const isCustom = document.querySelector('input[name="mode-count"][value="custom"]').checked;
+    document.getElementById('opt-count').disabled = !isCustom;
+    updateAvailableCount();
+};
 
 initApp();
 
@@ -103,7 +227,7 @@ window.startQuiz = function() {
     const anyFormatSelected = includeImages || includeVF || includeMulti || includeInterp;
 
     // Filtrar o pool de questões
-    let pool = questoesDB;
+    let pool = questoesDB.filter(q => selectedSubjects.includes(q.disciplina));
     
     if (anyFormatSelected) {
         pool = pool.filter(q => {
@@ -112,17 +236,11 @@ window.startQuiz = function() {
             const isMulti = !isVF && !isInterp;
             const hasImage = !!q.imagem;
 
-            // Se filtrou por imagem, a questão DEVE ter imagem
-            if (includeImages && !hasImage) return false;
-            
-            // Filtros de tipo (OR logic)
+            if (includeImages && hasImage) return true;
             if (includeVF && isVF) return true;
             if (includeInterp && isInterp) return true;
             if (includeMulti && isMulti) return true;
             
-            // Se só marcou imagens, e a questão tem imagem, passa
-            if (includeImages && hasImage && !includeVF && !includeInterp && !includeMulti) return true;
-
             return false;
         });
     }
