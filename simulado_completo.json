@@ -2305,6 +2305,291 @@
       },
       "resposta": "C",
       "comentario": "A sequência tem 4 itens. 27 dividido por 4 dá 6 com resto 3. O 3º item da sequência é o Fio Dental."
+    },
+    {
+      "id": "acs_premium_11",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "Durante a visita domiciliar, o ACS observa o recipiente mostrado na imagem abaixo. Sobre as formas imaturas do mosquito Aedes aegypti presentes na água, assinale a alternativa correta:",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Aedes_Aegypti_Mosquito_Larvae_%2826445073171%29.jpg",
+      "tags": ["Imagem", "Vetor"],
+      "alternativas": {
+        "A": "As larvas (conhecidas como 'larvas de mosquito') não transmitem doenças, apenas os mosquitos adultos.",
+        "B": "A presença de larvas indica que o ciclo de reprodução está ativo e a eliminação da água é a medida imediata de controle.",
+        "C": "Essas larvas podem sobreviver fora da água por até um ano se o recipiente secar.",
+        "D": "As larvas são a fase adulta do mosquito que ainda não desenvolveu asas."
+      },
+      "resposta": "B",
+      "comentario": "As larvas representam uma fase do ciclo de vida que ocorre obrigatoriamente na água. Sua presença confirma que o local é um criadouro ativo."
+    },
+    {
+      "id": "acs_premium_12",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "Ao realizar uma visita em uma área com casos suspeitos de Hanseníase, o ACS deve estar atento a manchas na pele como a mostrada na imagem. Qual característica é fundamental para suspeição desta doença?",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Multibacillary_leprosy_lesion.jpg",
+      "tags": ["Imagem", "Hanseníase"],
+      "alternativas": {
+        "A": "A mancha deve obrigatoriamente coçar e causar dor intensa.",
+        "B": "A perda ou diminuição da sensibilidade térmica, dolorosa ou tátil na área da mancha.",
+        "C": "A presença de descamação intensa e secreção purulenta na lesão.",
+        "D": "O aparecimento súbito de manchas escuras que desaparecem com o uso de hidratantes."
+      },
+      "resposta": "B",
+      "comentario": "A característica definidora da mancha de Hanseníase é a alteração de sensibilidade, devido ao comprometimento dos nervos periféricos pelo bacilo."
+    },
+    {
+      "id": "acs_premium_13",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "Analise o diagrama abaixo sobre potenciais criadouros de mosquitos em um domicílio. De acordo com as diretrizes do Ministério da Saúde, qual ação o ACS deve priorizar para orientar o morador?",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Potential_mosquito_breeding_sites_around_a_dwelling.svg",
+      "tags": ["Imagem", "Vetor"],
+      "alternativas": {
+        "A": "Vedar completamente as caixas d'água e remover pratinhos de vasos de plantas ou preenchê-los com areia.",
+        "B": "Utilizar inseticidas domésticos diariamente em todos os cômodos da casa.",
+        "C": "Aguardar a equipe de nebulização (fumacê) para realizar o controle das larvas.",
+        "D": "Manter as calhas entupidas para que a água não escorra para o quintal."
+      },
+      "resposta": "A",
+      "comentario": "O controle mecânico (eliminação ou vedação de criadouros) é a principal atribuição do ACS na prevenção de arboviroses como Dengue, Zika e Chikungunya."
+    },
+    {
+      "id": "acs_premium_14",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "A imagem abaixo mostra a cicatriz característica de uma vacina importante aplicada no recém-nascido. Qual doença esta vacina previne prioritariamente em suas formas graves (miliar e meníngea)?",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Bacillus_Calmette-Gu%C3%A9rin_scar.JPG",
+      "tags": ["Imagem", "Imunização"],
+      "alternativas": {
+        "A": "Poliomielite.",
+        "B": "Sarampo.",
+        "C": "Tuberculose.",
+        "D": "Hepatite B."
+      },
+      "resposta": "C",
+      "comentario": "A vacina BCG (Bacilo Calmette-Guérin) deixa uma cicatriz no braço direito e protege contra as formas graves da Tuberculose."
+    },
+    {
+      "id": "acs_premium_15",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "Sobre o papel do ACS no Sistema Único de Saúde (SUS), conforme representado na imagem de uma visita domiciliar, analise as afirmativas:\n\nI. O ACS é o elo fundamental entre a comunidade e a Unidade Básica de Saúde (UBS).\nII. Sua principal ferramenta de trabalho é a visita domiciliar regular e periódica.\nIII. O ACS deve realizar diagnósticos médicos e prescrever medicamentos básicos durante as visitas.\n\nAssinale a alternativa que indica quais itens estão CORRETOS:",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Community_health_worker_in_the_Brazilian_public_health_system.jpg",
+      "tags": ["Imagem", "Atribuições"],
+      "alternativas": {
+        "A": "Apenas I e II.",
+        "B": "Apenas I e III.",
+        "C": "Apenas II e III.",
+        "D": "I, II e III."
+      },
+      "resposta": "A",
+      "comentario": "O ACS não possui atribuição legal para realizar diagnósticos médicos ou prescrever medicamentos. Suas funções são voltadas à prevenção e promoção da saúde."
+    },
+    {
+      "id": "acs_premium_16",
+      "disciplina": "Língua Portuguesa",
+      "pergunta": "Leia o trecho abaixo retirado de um manual técnico do ACS:\n\n'A territorialização é o processo de reconhecimento da área sob responsabilidade da equipe, permitindo identificar vulnerabilidades, fluxos e dinâmicas sociais que impactam na saúde da população.'\n\nDe acordo com o texto, o objetivo principal da territorialização é:",
+      "tags": ["Interpretação"],
+      "alternativas": {
+        "A": "Vender planos de saúde para os moradores da região.",
+        "B": "Mapear a área para entender melhor os problemas e a realidade da comunidade.",
+        "C": "Construir novas sedes para a prefeitura no bairro.",
+        "D": "Apenas contar o número de pessoas que moram em cada casa."
+      },
+      "resposta": "B",
+      "comentario": "O texto destaca que o processo permite identificar vulnerabilidades e dinâmicas sociais, o que significa entender a realidade local."
+    },
+    {
+      "id": "acs_premium_17",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "Analise as afirmativas abaixo sobre a visita domiciliar do ACS e classifique-as como Verdadeira (V) ou Falsa (F):\n\n( ) A visita deve ser realizada prioritariamente em famílias com situações de risco (gestantes, crianças, idosos).\n( ) O ACS deve entrar na casa dos moradores mesmo sem autorização, caso suspeite de focos de dengue.\n( ) O sigilo profissional sobre as informações colhidas na visita é obrigatório, exceto para compartilhamento com a equipe de saúde.\n\nA sequência correta é:",
+      "tags": ["V/F"],
+      "alternativas": {
+        "A": "V - F - V",
+        "B": "F - V - F",
+        "C": "V - V - F",
+        "D": "V - F - F"
+      },
+      "resposta": "A",
+      "comentario": "O ACS nunca deve entrar em uma residência sem autorização do morador (inviolabilidade do domicílio). O sigilo é dever ético fundamental."
+    },
+    {
+      "id": "acs_premium_18",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "No contexto da saúde bucal, qual é a principal orientação que o ACS deve reforçar durante as visitas domiciliares para prevenir a cárie dentária?",
+      "tags": ["Saúde Bucal"],
+      "alternativas": {
+        "A": "Recomendar o uso de bochechos com álcool após as refeições.",
+        "B": "Orientar a escovação correta após as refeições e antes de dormir, além do uso de fio dental.",
+        "C": "Sugerir a substituição da escovação pelo uso de chicletes sem açúcar.",
+        "D": "Indicar que apenas crianças precisam escovar os dentes diariamente."
+      },
+      "resposta": "B",
+      "comentario": "A higiene bucal mecânica (escovação e fio dental) é a base da prevenção de doenças bucais em todas as idades."
+    },
+    {
+      "id": "acs_premium_19",
+      "disciplina": "Raciocínio Lógico",
+      "pergunta": "Uma equipe de Saúde da Família é responsável por 3.500 pessoas. Se cada ACS consegue realizar visitas mensais a 150 famílias, e cada família tem em média 4 pessoas, quantos ACS são necessários para cobrir toda a população em um mês?",
+      "tags": ["Cálculo"],
+      "alternativas": {
+        "A": "4 ACS.",
+        "B": "6 ACS.",
+        "C": "8 ACS.",
+        "D": "10 ACS."
+      },
+      "resposta": "B",
+      "comentario": "150 famílias * 4 pessoas = 600 pessoas por ACS. 3.500 / 600 = 5,83. Logo, são necessários 6 ACS para cobrir a demanda."
+    },
+    {
+      "id": "acs_premium_20",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "Qual das seguintes situações representa uma 'vulnerabilidade social' que o ACS deve registrar e comunicar à equipe de saúde?",
+      "tags": ["Social"],
+      "alternativas": {
+        "A": "Família que possui televisão de última geração.",
+        "B": "Residência com saneamento básico completo e água encanada.",
+        "C": "Domicílio onde reside pessoa idosa sozinha e sem rede de apoio familiar ou social.",
+        "D": "Criança que frequenta a escola regularmente e tem vacinação em dia."
+      },
+      "resposta": "C",
+      "comentario": "O idoso vivendo em isolamento social representa um risco de negligência e acidentes domésticos, sendo uma vulnerabilidade prioritária para a Atenção Básica."
+    },
+    {
+      "id": "acs_premium_21",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "Durante o acompanhamento de uma gestante, o ACS percebe que ela ainda não iniciou o Pré-natal, apesar de estar no terceiro mês de gravidez. Qual deve ser a conduta IMEDIATA do agente?",
+      "tags": ["Saúde da Mulher"],
+      "alternativas": {
+        "A": "Aguardar a próxima visita mensal para ver se ela muda de ideia.",
+        "B": "Orientar sobre a importância do Pré-natal e agendar/encaminhar a gestante para a primeira consulta na UBS o mais rápido possível.",
+        "C": "Repreender a gestante pela demora, pois ela está colocando o bebê em risco.",
+        "D": "Apenas registrar no sistema e não interferir na decisão da família."
+      },
+      "resposta": "B",
+      "comentario": "A captação precoce da gestante é uma das principais metas do ACS para garantir um pré-natal de qualidade e reduzir riscos materno-infantis."
+    },
+    {
+      "id": "acs_premium_22",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "Sobre o aleitamento materno exclusivo, qual orientação o ACS deve dar às mães com bebês de até 6 meses de vida?",
+      "tags": ["Saúde da Criança"],
+      "alternativas": {
+        "A": "Oferecer água e chás nos dias de muito calor para evitar desidratação.",
+        "B": "O leite materno é suficiente, não sendo necessário oferecer água, chás ou outros alimentos até os 6 meses.",
+        "C": "Introduzir papinhas de frutas a partir do quarto mês para o bebê se acostumar.",
+        "D": "O leite materno deve ser complementado com leite de vaca se o bebê chorar muito."
+      },
+      "resposta": "B",
+      "comentario": "O Ministério da Saúde recomenda aleitamento materno EXCLUSIVO até os 6 meses. O leite materno já contém toda a água e nutrientes necessários."
+    },
+    {
+      "id": "acs_premium_23",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "Ao visitar um paciente hipertenso, o ACS verifica que ele parou de tomar o medicamento porque 'se sente bem'. Qual a orientação correta?",
+      "tags": ["Doenças Crônicas"],
+      "alternativas": {
+        "A": "Concordar com o paciente, pois remédios em excesso fazem mal ao fígado.",
+        "B": "Explicar que a hipertensão é uma 'doença silenciosa' e que o medicamento não deve ser interrompido sem orientação médica.",
+        "C": "Sugerir que ele troque o remédio por um chá natural que 'baixa a pressão'.",
+        "D": "Dizer que ele pode tomar o remédio dia sim, dia não, para economizar."
+      },
+      "resposta": "B",
+      "comentario": "A adesão ao tratamento medicamentoso é vital na hipertensão, que muitas vezes não apresenta sintomas mesmo quando a pressão está alta."
+    },
+    {
+      "id": "acs_premium_24",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "O sistema utilizado pelo ACS para registrar as visitas domiciliares, cadastros e dados de saúde da população via tablet ou fichas é o:",
+      "tags": ["Informática"],
+      "alternativas": {
+        "A": "Windows Saúde.",
+        "B": "e-SUS Atenção Primária (e-SUS AB).",
+        "C": "Facebook Saúde da Família.",
+        "D": "Google Maps Sanitário."
+      },
+      "resposta": "B",
+      "comentario": "O e-SUS é a estratégia do Ministério da Saúde para reestruturar as informações da Atenção Básica em nível nacional."
+    },
+    {
+      "id": "acs_premium_25",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "Durante uma visita, um vizinho pergunta ao ACS se é verdade que o morador da casa ao lado está com HIV. De acordo com o código de ética, o ACS deve:",
+      "tags": ["Ética"],
+      "alternativas": {
+        "A": "Confirmar a informação para que o vizinho possa se prevenir.",
+        "B": "Negar a informação, mas fazer uma expressão facial que indique que é verdade.",
+        "C": "Manter o sigilo profissional e explicar que não pode compartilhar informações de saúde de nenhum morador.",
+        "D": "Dizer que só conta se o vizinho prometer não espalhar para mais ninguém."
+      },
+      "resposta": "C",
+      "comentario": "O sigilo profissional é um dever do ACS e um direito do cidadão, sendo fundamental para manter o vínculo de confiança com a comunidade."
+    },
+    {
+      "id": "acs_premium_26",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "A Tuberculose é uma doença infecciosa que afeta principalmente os pulmões. Qual é o principal sintoma que o ACS deve investigar na comunidade para identificar casos suspeitos (Sintomáticos Respiratórios)?",
+      "tags": ["Tuberculose"],
+      "alternativas": {
+        "A": "Dor de cabeça e manchas no corpo por 2 dias.",
+        "B": "Tosse por três semanas ou mais.",
+        "C": "Dor de dente e gengiva sangrando.",
+        "D": "Unhas quebradiças e queda de cabelo."
+      },
+      "resposta": "B",
+      "comentario": "Pessoas com tosse há 3 semanas ou mais são consideradas 'sintomáticos respiratórios' e devem ser encaminhadas para exames de Tuberculose."
+    },
+    {
+      "id": "acs_premium_27",
+      "disciplina": "Informática Básica",
+      "pergunta": "Ao utilizar o tablet para o cadastro de uma nova família, o ACS precisa enviar os dados para a base nacional. Qual termo técnico define o envio de dados do dispositivo local para um servidor central?",
+      "tags": ["Informática"],
+      "alternativas": {
+        "A": "Download.",
+        "B": "Upload (Sincronização).",
+        "C": "Delete.",
+        "D": "Format."
+      },
+      "resposta": "B",
+      "comentario": "Upload é o processo de enviar dados de um computador ou dispositivo local para um sistema remoto (servidor)."
+    },
+    {
+      "id": "acs_premium_28",
+      "disciplina": "Raciocínio Lógico",
+      "pergunta": "Em um bairro com 800 casas, o ACS observou que 1 a cada 20 casas possuía focos de mosquitos. Quantas casas com focos foram encontradas no total?",
+      "tags": ["Cálculo"],
+      "alternativas": {
+        "A": "20 casas.",
+        "B": "40 casas.",
+        "C": "80 casas.",
+        "D": "100 casas."
+      },
+      "resposta": "B",
+      "comentario": "800 dividido por 20 é igual a 40. Logo, foram encontradas 40 casas com focos."
+    },
+    {
+      "id": "acs_premium_29",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "Sobre a periodicidade das visitas domiciliares, a diretriz geral é que cada família seja visitada pelo menos:",
+      "tags": ["Atribuições"],
+      "alternativas": {
+        "A": "Uma vez por ano.",
+        "B": "Uma vez por mês.",
+        "C": "Uma vez por semana.",
+        "D": "Apenas quando o morador solicitar na UBS."
+      },
+      "resposta": "B",
+      "comentario": "A recomendação da Política Nacional de Atenção Básica é que a visita domiciliar ocorra mensalmente para todas as famílias da microárea."
+    },
+    {
+      "id": "acs_premium_30",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "Qual é a idade recomendada para a primeira dose da vacina contra a Dengue no SUS, de acordo com as campanhas recentes de 2024 para o público prioritário?",
+      "tags": ["Atualidades"],
+      "alternativas": {
+        "A": "Apenas recém-nascidos.",
+        "B": "Crianças e adolescentes de 10 a 14 anos.",
+        "C": "Apenas idosos acima de 80 anos.",
+        "D": "Qualquer pessoa que já tenha tido dengue antes."
+      },
+      "resposta": "B",
+      "comentario": "Em 2024, o Ministério da Saúde iniciou a vacinação contra Dengue priorizando a faixa etária de 10 a 14 anos devido ao maior risco de hospitalização."
     }
   ]
 }
