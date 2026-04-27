@@ -605,10 +605,10 @@ button:disabled {
 }
 
 .modal-content {
-    width: 90%;
-    max-width: 400px;
+    width: 95%;
+    max-width: 550px;
     text-align: center;
-    padding: 2.5rem 2rem;
+    padding: 3rem 2.5rem;
 }
 
 .result-icon {

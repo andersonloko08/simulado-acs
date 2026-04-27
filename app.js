@@ -404,21 +404,21 @@ window.finish = function() {
     }
 
     // Montar HTML do detalhamento por matéria
-    let breakdownHtml = '<h4 style="margin: 0 0 15px 0; font-size: 1.3rem; font-weight: 800; color: var(--text-color); border-bottom: 2px solid var(--option-border); padding-bottom: 10px;">Desempenho por Matéria</h4>';
+    let breakdownHtml = '<h4 style="margin: 0 0 20px 0; font-size: 1.4rem; font-weight: 800; color: var(--text-color); border-bottom: 2px solid var(--primary); padding-bottom: 10px;">Desempenho por Matéria</h4>';
     for (const [subj, stats] of Object.entries(subjectStats)) {
         const perc = Math.round((stats.correct / stats.total) * 100) || 0;
         let color = perc >= 50 ? 'var(--success)' : 'var(--danger)';
         breakdownHtml += `
-            <div style="display: flex; flex-direction: column; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(0,0,0,0.05);">
-                <span style="font-size: 1.2rem; font-weight: bold; margin-bottom: 5px;">${subj}</span>
+            <div style="display: flex; flex-direction: column; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid rgba(0,0,0,0.08);">
+                <span style="font-size: 1.3rem; font-weight: bold; margin-bottom: 8px; color: var(--text-color);">${subj}</span>
                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-size: 1.1rem; color: var(--text-muted);">
-                        Peso ${stats.peso.toFixed(1)} <br>
-                        ${stats.correct}/${stats.total} acertos
+                    <span style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.4;">
+                        Peso ${stats.peso.toFixed(1)} / Questão <br>
+                        <strong>${stats.correct}</strong> de ${stats.total} acertos
                     </span>
                     <span style="text-align: right; display: flex; flex-direction: column; align-items: flex-end;">
-                        <span style="color: ${color}; font-size: 1.4rem; font-weight: 900;">${stats.pontosGanhos.toFixed(1)} / ${stats.pontosPossiveis.toFixed(1)} pts</span>
-                        <span style="font-size: 1.2rem; font-weight: bold; color: ${color};">${perc}%</span>
+                        <span style="color: ${color}; font-size: 1.6rem; font-weight: 900;">${stats.pontosGanhos.toFixed(1)} <small style="font-size: 0.9rem; opacity: 0.8;">pts</small></span>
+                        <span style="font-size: 1.2rem; font-weight: bold; color: ${color}; background: ${perc >= 50 ? 'var(--success-light)' : 'var(--danger-light)'}; padding: 2px 8px; border-radius: 6px;">${perc}%</span>
                     </span>
                 </div>
             </div>
