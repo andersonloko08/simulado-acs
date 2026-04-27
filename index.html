@@ -45,6 +45,67 @@
                     </div>
                 </div>
 
+                <!-- OPÇÕES DO SIMULADO AVANÇADAS -->
+                <div class="quiz-options glass-card" style="margin-top: 20px; padding: 20px; text-align: left; background: rgba(255,255,255,0.05); border: 1px solid var(--option-border);">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--primary); display: flex; align-items: center; gap: 10px;">
+                        <i class="fa-solid fa-gear"></i> Configurar Simulado
+                    </h3>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <!-- Coluna 1: Tipos e Quantidade -->
+                        <div>
+                            <p style="font-weight: bold; font-size: 0.9rem; margin-bottom: 8px; color: var(--text-muted);">Formatos:</p>
+                            <div style="display: grid; gap: 8px;">
+                                <label class="option-check" style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85rem;">
+                                    <input type="checkbox" id="opt-images" style="accent-color: var(--primary);">
+                                    <span>Imagens</span>
+                                </label>
+                                <label class="option-check" style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85rem;">
+                                    <input type="checkbox" id="opt-multipla" style="accent-color: var(--primary);">
+                                    <span>Múltipla Escolha</span>
+                                </label>
+                                <label class="option-check" style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85rem;">
+                                    <input type="checkbox" id="opt-vf" style="accent-color: var(--primary);">
+                                    <span>Verdadeiro ou Falso</span>
+                                </label>
+                                <label class="option-check" style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85rem;">
+                                    <input type="checkbox" id="opt-interpretação" style="accent-color: var(--primary);">
+                                    <span>Interpretação de Texto</span>
+                                </label>
+                            </div>
+
+                            <div style="margin-top: 15px;">
+                                <label for="opt-count" style="font-weight: bold; font-size: 0.9rem; color: var(--text-muted);">Total de Questões:</label>
+                                <select id="opt-count" style="width: 100%; padding: 5px; border-radius: 5px; background: var(--bg-color); color: var(--text-color); border: 1px solid var(--option-border); margin-top: 5px;">
+                                    <option value="10">10 Questões (Rápido)</option>
+                                    <option value="20">20 Questões (Médio)</option>
+                                    <option value="40" selected>40 Questões (Padrão Edital)</option>
+                                    <option value="60">60 Questões (Completo)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Coluna 2: Matérias -->
+                        <div>
+                            <p style="font-weight: bold; font-size: 0.9rem; margin-bottom: 8px; color: var(--text-muted);">Matérias:</p>
+                            <div style="display: grid; gap: 8px;" id="subjects-filter">
+                                <label class="option-check" style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85rem;">
+                                    <input type="checkbox" name="subject" value="Língua Portuguesa" checked> <span>Português</span>
+                                </label>
+                                <label class="option-check" style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85rem;">
+                                    <input type="checkbox" name="subject" value="Raciocínio Lógico" checked> <span>Raciocínio Lógico</span>
+                                </label>
+                                <label class="option-check" style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85rem;">
+                                    <input type="checkbox" name="subject" value="Informática Básica" checked> <span>Informática</span>
+                                </label>
+                                <label class="option-check" style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.85rem;">
+                                    <input type="checkbox" name="subject" value="Conhecimentos Específicos" checked> <span>Conhecimentos Específicos</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <button id="start-btn" onclick="startQuiz()" class="primary-btn btn-pulse" disabled>
                     <i class="fa-solid fa-play"></i> Iniciar Simulado
                 </button>

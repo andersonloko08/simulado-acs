@@ -71,29 +71,103 @@ function shuffleArray(arr) {
     return newArr;
 }
 
+window.reportError = function(index) {
+    const q = simuladoAtual[index];
+    
+    // Configurações do Google Form do usuário
+    const googleFormBase = "https://docs.google.com/forms/d/e/1FAIpQLScyGPcChIm3d0RRrfHJ1GUthap-7VlwED1vmosnK2tH4D5gWA/viewform";
+    const entryId = "entry.1494229105";      // Campo: ID da Questão
+    const entrySubject = "entry.858055000";  // Campo: Disciplina
+    const entryDesc = "entry.679365778";     // Campo: Descrição do Erro
+    
+    const finalUrl = `${googleFormBase}?${entryId}=${q.id}&${entrySubject}=${encodeURIComponent(q.disciplina)}&${entryDesc}=${encodeURIComponent("(Descreva aqui o erro encontrado na questão)")}`;
+    
+    window.open(finalUrl, '_blank');
+};
+
 // Start Quiz
 window.startQuiz = function() {
-    // Hide home, show quiz
-    elHome.classList.remove('active');
-    setTimeout(() => {
-        elHome.style.display = 'none';
-        elQuiz.style.display = 'block';
-        setTimeout(() => elQuiz.classList.add('active'), 50);
-    }, 400); // Wait for fade out
+    const includeImages = document.getElementById('opt-images') ? document.getElementById('opt-images').checked : false;
+    const includeVF = document.getElementById('opt-vf') ? document.getElementById('opt-vf').checked : false;
+    const includeMulti = document.getElementById('opt-multipla') ? document.getElementById('opt-multipla').checked : false;
+    const includeInterp = document.getElementById('opt-interpretação') ? document.getElementById('opt-interpretação').checked : false;
+    const totalDesired = parseInt(document.getElementById('opt-count').value) || 40;
+    const selectedSubjects = Array.from(document.querySelectorAll('input[name="subject"]:checked')).map(cb => cb.value);
 
-    // Select questions based on Edital rules
-    const qPt = questoesDB.filter(q => q.disciplina === "Língua Portuguesa");
-    const qRl = questoesDB.filter(q => q.disciplina === "Raciocínio Lógico");
-    const qInfo = questoesDB.filter(q => q.disciplina === "Informática Básica");
-    const qCe = questoesDB.filter(q => q.disciplina === "Conhecimentos Específicos");
+    if (selectedSubjects.length === 0) {
+        alert("Por favor, selecione pelo menos uma matéria!");
+        return;
+    }
 
-    const selPt = shuffleArray(qPt).slice(0, 10);
-    const selRl = shuffleArray(qRl).slice(0, 5);
-    const selInfo = shuffleArray(qInfo).slice(0, 5);
-    const selCe = shuffleArray(qCe).slice(0, 20);
+    // Se NENHUM formato estiver marcado, consideramos que quer TODOS (fallback)
+    const anyFormatSelected = includeImages || includeVF || includeMulti || includeInterp;
 
-    // Grouping questions by subject to match real exam feel
-    simuladoAtual = [...selPt, ...selRl, ...selInfo, ...selCe];
+    // Filtrar o pool de questões
+    let pool = questoesDB;
+    
+    if (anyFormatSelected) {
+        pool = pool.filter(q => {
+            const isVF = q.pergunta.includes("(V)") || q.pergunta.includes("(F)") || (q.tags && q.tags.includes("V/F"));
+            const isInterp = q.pergunta.toLowerCase().includes("texto") || q.pergunta.toLowerCase().includes("leia") || (q.tags && q.tags.includes("Interpretação"));
+            const isMulti = !isVF && !isInterp;
+            const hasImage = !!q.imagem;
+
+            // Se filtrou por imagem, a questão DEVE ter imagem
+            if (includeImages && !hasImage) return false;
+            
+            // Filtros de tipo (OR logic)
+            if (includeVF && isVF) return true;
+            if (includeInterp && isInterp) return true;
+            if (includeMulti && isMulti) return true;
+            
+            // Se só marcou imagens, e a questão tem imagem, passa
+            if (includeImages && hasImage && !includeVF && !includeInterp && !includeMulti) return true;
+
+            return false;
+        });
+    }
+
+    // Seleção de questões proporcional
+    let selectedQuestions = [];
+    const ratios = {
+        "Língua Portuguesa": 10/40,
+        "Raciocínio Lógico": 5/40,
+        "Informática Básica": 5/40,
+        "Conhecimentos Específicos": 20/40
+    };
+
+    // Ajustar ratios se alguma matéria não foi selecionada
+    let activeRatios = {};
+    let ratioSum = 0;
+    selectedSubjects.forEach(s => {
+        activeRatios[s] = ratios[s] || (1 / selectedSubjects.length);
+        ratioSum += activeRatios[s];
+    });
+
+    // Normalizar ratios para somarem 1
+    selectedSubjects.forEach(s => {
+        activeRatios[s] = activeRatios[s] / ratioSum;
+    });
+
+    // Sortear de cada matéria ativa
+    selectedSubjects.forEach(s => {
+        const countForSubject = Math.round(totalDesired * activeRatios[s]);
+        const subjectPool = pool.filter(q => q.disciplina === s);
+        
+        if (subjectPool.length > 0) {
+            const shuffled = shuffleArray([...subjectPool]);
+            selectedQuestions.push(...shuffled.slice(0, countForSubject));
+        }
+    });
+
+    // Se faltar questões por arredondamento ou falta no pool, completa com o que tiver
+    if (selectedQuestions.length < totalDesired) {
+        const remainingPool = shuffleArray(pool.filter(q => !selectedQuestions.includes(q) && selectedSubjects.includes(q.disciplina)));
+        selectedQuestions.push(...remainingPool.slice(0, totalDesired - selectedQuestions.length));
+    }
+
+    // Embaralhar a ordem final
+    simuladoAtual = shuffleArray(selectedQuestions);
     respostasUsuario = {};
     
     // Initialize user answers state
@@ -105,13 +179,19 @@ window.startQuiz = function() {
         };
     });
 
-    currentQuestionIndex = 0;
-    renderNavGrid();
-    renderQuestion(currentQuestionIndex);
-    updateProgress();
-    
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // UI Transition
+    elHome.classList.remove('active');
+    setTimeout(() => {
+        elHome.style.display = 'none';
+        elQuiz.style.display = 'block';
+        setTimeout(() => elQuiz.classList.add('active'), 50);
+        
+        currentQuestionIndex = 0;
+        renderNavGrid();
+        renderQuestion(currentQuestionIndex);
+        updateProgress();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 400);
 }
 
 // Render Navigation Grid
@@ -167,11 +247,19 @@ function renderQuestion(index) {
     
     let html = `
     <div class="question-card slide-up" id="q-card-${index}">
-        <div class="question-meta" style="font-size: 0.85rem; color: var(--primary); font-weight: bold; margin-bottom: 5px; text-transform: uppercase;">
-            <i class="fa-solid fa-book-open"></i> ${escapeHtml(q.disciplina || 'Questão')}
+        <div class="question-meta" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span style="font-size: 0.85rem; color: var(--primary); font-weight: bold; text-transform: uppercase;">
+                <i class="fa-solid fa-book-open"></i> ${escapeHtml(q.disciplina || 'Questão')}
+            </span>
+            <div class="question-tags" style="display: flex; gap: 5px;">
+                ${(q.tags || []).map(tag => `<span class="tag-badge">${tag}</span>`).join('')}
+                ${q.imagem ? '<span class="tag-badge"><i class="fa-solid fa-image"></i> Imagem</span>' : ''}
+                ${q.pergunta.includes('(V)') || q.pergunta.includes('(F)') ? '<span class="tag-badge">V/F</span>' : '<span class="tag-badge">Múltipla Escolha</span>'}
+            </div>
         </div>
         <h3>Questão ${index + 1} de ${simuladoAtual.length}</h3>
         <div class="question-text">${escapeHtml(q.pergunta)}</div>
+        ${q.imagem ? `<div class="question-image-container"><img src="${q.imagem}" class="question-image" onclick="window.open('${q.imagem}', '_blank')" title="Clique para ampliar" alt="Imagem da questão"></div>` : ''}
         
         <div class="options-grid" id="options-${index}">
     `;
@@ -207,11 +295,16 @@ function renderQuestion(index) {
 
     html += `
         </div>
-        
-        <button id="btn-check-${index}" class="primary-btn w-100" onclick="checkAnswer(${index})" ${state.selecionada && !state.conferida ? "" : "disabled"} style="${state.conferida ? 'display:none;' : ''}">
-            <i class="fa-solid fa-clipboard-check"></i> Conferir Resposta
-        </button>
 
+        <div class="question-footer" style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed var(--option-border); display: flex; justify-content: space-between; align-items: center;">
+            <button onclick="reportError(${index})" class="report-btn" title="Reportar erro nesta questão">
+                <i class="fa-solid fa-triangle-exclamation"></i> Reportar Erro
+            </button>
+            <button id="check-btn-${index}" onclick="checkAnswer(${index})" class="primary-btn check-btn" ${state.selecionada && !state.conferida ? "" : "disabled"} ${state.conferida ? 'style="display:none;"' : ''}>
+                <i class="fa-solid fa-check-double"></i> Conferir Resposta
+            </button>
+        </div>
+        
         <div id="feedback-${index}" class="feedback-box"></div>
     </div>
     `;
@@ -472,4 +565,17 @@ window.finish = function() {
 
     elQuiz.classList.remove('active');
     elResultModal.classList.add('active');
+};
+
+window.closeModal = function() {
+    elResultModal.classList.remove('active');
+    setTimeout(() => {
+        elResultModal.style.display = 'none';
+        elQuiz.style.display = 'none';
+        elHome.style.display = 'block';
+        setTimeout(() => {
+            elHome.classList.add('active');
+            location.reload(); 
+        }, 50);
+    }, 400);
 };
