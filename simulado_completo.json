@@ -645,7 +645,7 @@
     },
     {
       "id": "1061312",
-      "pergunta": "Analise as afirmativas a seguir : I. É função do Agente Comunitário de Saúde (ACS): Mobilização da comunidade e estímulo à participação nas políticas públicas voltadas para as áreas de saúde e socioeducacional. II. Também é função do ACS: Realização de visitas domiciliares regulares e periódicas para acolhimento e acompanhamento de pessoas. Marque a alternativa CORRETA:",
+      "pergunta": "Analise as afirmativas a seguir:\n\nI. É função do Agente Comunitário de Saúde (ACS): Mobilização da comunidade e estímulo à participação nas políticas públicas voltadas para as áreas de saúde e socioeducacional.\n\nII. Também é função do ACS: Realização de visitas domiciliares regulares e periódicas para acolhimento e acompanhamento de pessoas.\n\nMarque a alternativa CORRETA:",
       "alternativas": {
         "A": "As duas afirmativas são verdadeiras.",
         "B": "A afirmativa I é verdadeira, e a II é falsa.",
@@ -2171,6 +2171,140 @@
       },
       "resposta": "C",
       "comentario": "O F5 inicia o modo de apresentação de slides do começo. (Shift + F5 inicia do slide atual)."
+    },
+    {
+      "id": "premium_01",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "Observe a imagem abaixo que apresenta o vetor responsável pela transmissão de doenças como Dengue, Zika e Chikungunya. Com base nas características morfológicas visíveis, como as listras brancas nas patas e o desenho em forma de lira no tórax, identifique o vetor:",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Aedes_aegypti_CDC-Gathany.jpg",
+      "alternativas": {
+        "A": "Anopheles darlingi (Vetor da Malária).",
+        "B": "Culex quinquefasciatus (Pernilongo comum).",
+        "C": "Aedes aegypti.",
+        "D": "Lutzomyia longipalpis (Mosquito-palha).",
+        "E": "Aedes albopictus."
+      },
+      "resposta": "C",
+      "comentario": "A imagem mostra o Aedes aegypti, cujas principais características são as listras brancas nas patas e o desenho de 'lira' branca no tórax."
+    },
+    {
+      "id": "premium_02",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "A imagem abaixo mostra formas imaturas de um vetor de arboviroses em água estagnada. Sobre o ciclo de vida desse vetor, assinale a alternativa correta:",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Underwater_view_of_mosquito_pupae_in_standing_water.jpg",
+      "alternativas": {
+        "A": "As larvas e pupas respiram fora d'água e podem sobreviver em solo seco por meses.",
+        "B": "O ciclo de ovo a adulto ocorre obrigatoriamente em meio aquático e pode durar de 7 a 10 dias em condições favoráveis.",
+        "C": "As pupas (em formato de vírgula) representam a fase em que o mosquito mais se alimenta.",
+        "D": "A eliminação da água parada não afeta as larvas, que se transformam em adultos mesmo em terra úmida."
+      },
+      "resposta": "B",
+      "comentario": "O ciclo do Aedes aegypti (ovo, larva, pupa, adulto) depende de água parada. A fase de ovo é a única que resiste à dessecação; larvas e pupas morrem sem água."
+    },
+    {
+      "id": "premium_03",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "Analise as afirmativas abaixo sobre a Hanseníase, classificando-as como Verdadeira (V) ou Falsa (F). Em seguida, selecione a sequência correta.\n\n( ) A Hanseníase é uma doença infecciosa crônica que afeta pele e nervos periféricos.\n( ) Manchas esbranquiçadas, avermelhadas ou acastanhadas com perda de sensibilidade ao calor e ao toque são sintomas clássicos.\n( ) A transmissão ocorre pelo contato direto com as feridas e lesões de pele do doente.\n( ) O tratamento é realizado por meio da Poliquimioterapia (PQT), oferecida gratuitamente pelo SUS.",
+      "alternativas": {
+        "A": "V – V – F – V.",
+        "B": "V – F – V – V.",
+        "C": "F – V – F – V.",
+        "D": "V – V – V – F.",
+        "E": "F – F – V – V."
+      },
+      "resposta": "A",
+      "comentario": "A terceira afirmativa é falsa porque a Hanseníase NÃO é transmitida pelo toque nas feridas, mas sim pelas vias aéreas (gotículas de saliva) de pacientes sem tratamento."
+    },
+    {
+      "id": "premium_04",
+      "disciplina": "Língua Portuguesa",
+      "pergunta": "Leia o texto abaixo para responder à questão:\n\n'O trabalho do Agente Comunitário de Saúde é, antes de tudo, um trabalho de escuta e acolhimento. Ao entrar na casa de um morador, o ACS não leva apenas folders e orientações técnicas; ele leva a presença do Estado e do sistema de saúde para dentro da intimidade das famílias. Essa ponte é fundamental para que a prevenção deixe de ser um conceito abstrato e se torne uma prática cotidiana.'\n\nDe acordo com o texto, a função da 'ponte' estabelecida pelo ACS é:",
+      "alternativas": {
+        "A": "Fiscalizar as famílias para garantir que sigam todas as normas de higiene.",
+        "B": "Substituir o papel do médico nas comunidades mais distantes.",
+        "C": "Transformar a prevenção em uma ação concreta no dia a dia dos moradores.",
+        "D": "Apenas entregar materiais educativos para reduzir gastos públicos."
+      },
+      "resposta": "C",
+      "comentario": "O texto afirma explicitamente que essa 'ponte' é fundamental para que a prevenção 'se torne uma prática cotidiana'."
+    },
+    {
+      "id": "premium_05",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "Sobre a Tuberculose, é atribuição do ACS durante a visita domiciliar:",
+      "alternativas": {
+        "A": "Solicitar a baciloscopia de escarro para todos os moradores da casa, independente de sintomas.",
+        "B": "Identificar o 'Sintomático Respiratório' (pessoa com tosse há 3 semanas ou mais) e encaminhá-lo à UBS.",
+        "C": "Prescrever o esquema básico de antibióticos para pacientes com diagnóstico confirmado.",
+        "D": "Isolar o paciente em um quarto separado e impedir sua saída para a comunidade durante todo o tratamento."
+      },
+      "resposta": "B",
+      "comentario": "O ACS deve identificar sintomáticos respiratórios (tosse por 3 semanas ou mais) e garantir que eles procurem a unidade de saúde para diagnóstico."
+    },
+    {
+      "id": "premium_06",
+      "disciplina": "Raciocínio Lógico",
+      "pergunta": "Em uma microárea, o ACS visita 4 casas por hora. Se ele trabalha 6 horas por dia e gasta 30 minutos do seu tempo total para reuniões na unidade, quantas casas ele consegue visitar em um dia?",
+      "alternativas": {
+        "A": "24 casas.",
+        "B": "22 casas.",
+        "C": "20 casas.",
+        "D": "18 casas."
+      },
+      "resposta": "B",
+      "comentario": "6 horas = 360 min. Menos 30 min de reunião = 330 min (5,5 horas). 5,5 horas x 4 casas/hora = 22 casas."
+    },
+    {
+      "id": "premium_07",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "Analise a situação: Durante a visita, o ACS percebe que um idoso apresenta hematomas em diferentes estágios de cicatrização e demonstra medo ao falar perto do cuidador. Qual a conduta correta?",
+      "alternativas": {
+        "A": "Confrontar o cuidador imediatamente e exigir explicações sobre os hematomas.",
+        "B": "Anotar no relatório pessoal mas não comentar com ninguém para não quebrar a ética do sigilo domiciliar.",
+        "C": "Comunicar imediatamente à equipe de saúde (Enfermeiro/Médico) para que o caso seja discutido e, se necessário, notificado aos órgãos competentes.",
+        "D": "Aguardar a próxima visita para confirmar se novos hematomas aparecerão."
+      },
+      "resposta": "C",
+      "comentario": "Suspeitas de violência contra idosos, crianças ou mulheres devem ser comunicadas à equipe para proteção da vítima e notificação legal."
+    },
+    {
+      "id": "premium_08",
+      "disciplina": "Conhecimentos Específicos",
+      "pergunta": "Sobre a saúde bucal, o ACS deve orientar que a primeira visita da criança ao dentista ocorra:",
+      "alternativas": {
+        "A": "Somente quando todos os dentes de leite já tiverem nascido.",
+        "B": "Apenas se a criança apresentar alguma dor ou cárie visível.",
+        "C": "Até o primeiro ano de vida ou com o nascimento do primeiro dente.",
+        "D": "A partir dos 5 anos, quando a criança já consegue escovar os dentes sozinha."
+      },
+      "resposta": "C",
+      "comentario": "A recomendação é que a primeira consulta ocorra precocemente, até o primeiro ano de vida, para orientações preventivas aos pais."
+    },
+    {
+      "id": "premium_09",
+      "disciplina": "Língua Portuguesa",
+      "pergunta": "Identifique a alternativa em que a palavra sublinhada NÃO indica uma causa:\n\n'A comunidade mobilizou-se **porque** o índice de dengue aumentou. **Como** não havia repelente, os casos cresceram. O ACS foi chamado **visto que** conhecia a região. Ele estava cansado, **portanto** pediu folga.'",
+      "alternativas": {
+        "A": "porque",
+        "B": "Como",
+        "C": "visto que",
+        "D": "portanto"
+      },
+      "resposta": "D",
+      "comentario": "'Portanto' é uma conjunção conclusiva, não causal."
+    },
+    {
+      "id": "premium_10",
+      "disciplina": "Raciocínio Lógico",
+      "pergunta": "Considere a sequência de entregas de kits de higiene: Escova, Pasta, Fio Dental, Sabonete, Escova, Pasta, Fio Dental, Sabonete... Qual será o 27º item a ser entregue?",
+      "alternativas": {
+        "A": "Escova",
+        "B": "Pasta",
+        "C": "Fio Dental",
+        "D": "Sabonete"
+      },
+      "resposta": "C",
+      "comentario": "A sequência tem 4 itens. 27 dividido por 4 dá 6 com resto 3. O 3º item da sequência é o Fio Dental."
     }
   ]
 }
