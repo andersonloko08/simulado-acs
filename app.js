@@ -358,12 +358,14 @@ function updateProgress() {
 
 // Finish Quiz
 window.finish = function() {
-    // Auto-check any un-checked answered questions
+    // Auto-check removed per user request: only count if button clicked
+    /*
     simuladoAtual.forEach((_, index) => {
         if (respostasUsuario[index].selecionada && !respostasUsuario[index].conferida) {
             respostasUsuario[index].conferida = true;
         }
     });
+    */
 
     const pesos = {
         "Língua Portuguesa": 2.0,
@@ -392,7 +394,8 @@ window.finish = function() {
     for (const key in respostasUsuario) {
         const state = respostasUsuario[key];
         const q = simuladoAtual[key];
-        if (state.selecionada === state.correta) {
+        // Only count if it was explicitly confirmed by clicking the button
+        if (state.conferida && state.selecionada === state.correta) {
             acertos++;
             subjectStats[q.disciplina].correct++;
             subjectStats[q.disciplina].pontosGanhos += subjectStats[q.disciplina].peso;
@@ -428,7 +431,7 @@ window.finish = function() {
 
     let respondidas = 0;
     for (const key in respostasUsuario) {
-        if (respostasUsuario[key].selecionada !== null) respondidas++;
+        if (respostasUsuario[key].conferida) respondidas++;
     }
     const completionPercentage = total > 0 ? Math.round((respondidas / total) * 100) : 0;
 
