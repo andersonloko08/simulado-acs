@@ -106,11 +106,48 @@ window.startQuiz = function() {
     });
 
     currentQuestionIndex = 0;
+    renderNavGrid();
     renderQuestion(currentQuestionIndex);
     updateProgress();
     
     // Scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Render Navigation Grid
+function renderNavGrid() {
+    const gridEl = document.getElementById('question-nav-grid');
+    if (!gridEl) return;
+    
+    let html = '';
+    for (let i = 0; i < simuladoAtual.length; i++) {
+        const state = respostasUsuario[i];
+        let classes = 'question-nav-btn';
+        if (state.selecionada) classes += ' answered';
+        if (i === currentQuestionIndex) classes += ' active';
+        
+        html += `<button class="${classes}" onclick="jumpToQuestion(${i})" id="nav-btn-${i}">${i + 1}</button>`;
+    }
+    gridEl.innerHTML = html;
+}
+
+window.jumpToQuestion = function(index) {
+    currentQuestionIndex = index;
+    renderQuestion(currentQuestionIndex);
+    updateNavGridSelection();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+function updateNavGridSelection() {
+    for (let i = 0; i < simuladoAtual.length; i++) {
+        const btn = document.getElementById(`nav-btn-${i}`);
+        if (!btn) continue;
+        const state = respostasUsuario[i];
+        
+        btn.className = 'question-nav-btn';
+        if (state.selecionada) btn.classList.add('answered');
+        if (i === currentQuestionIndex) btn.classList.add('active');
+    }
 }
 
 function escapeHtml(unsafe) {
@@ -226,7 +263,19 @@ window.prevQuestion = function() {
 };
 
 window.confirmFinish = function() {
-    if (confirm("Tem certeza que deseja encerrar o simulado? As questões não respondidas serão contabilizadas como erros.")) {
+    let unAnswered = 0;
+    for (const key in respostasUsuario) {
+        if (!respostasUsuario[key].selecionada) unAnswered++;
+    }
+    
+    let msg = "Tem certeza que deseja encerrar o simulado?";
+    if (unAnswered > 0) {
+        msg = `Atenção: Há ${unAnswered} questões ainda não respondidas! Deseja mesmo encerrar o simulado assim mesmo? Elas serão contabilizadas como erros.`;
+    } else {
+        msg += " Todas as questões foram respondidas.";
+    }
+
+    if (confirm(msg)) {
         finish();
     }
 };
@@ -247,6 +296,8 @@ window.selectOption = function(qIndex, optionKey) {
 
     const btnCheck = document.getElementById(`btn-check-${qIndex}`);
     btnCheck.disabled = false;
+    
+    updateNavGridSelection();
 };
 
 // Check Single Answer
@@ -299,6 +350,10 @@ function updateProgress() {
     
     elProgressBar.style.width = `${percentage}%`;
     elQuestionCounter.innerHTML = `<i class="fa-solid fa-list-ol"></i> ${currentQuestionIndex + 1}/${total}`;
+    
+    if (typeof updateNavGridSelection === 'function') {
+        updateNavGridSelection();
+    }
 }
 
 // Finish Quiz
