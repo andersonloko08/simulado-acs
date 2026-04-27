@@ -505,8 +505,8 @@ window.selectOption = function(qIndex, optionKey) {
     selectedLabel.classList.add('selected');
     selectedLabel.querySelector('input').checked = true;
 
-    const btnCheck = document.getElementById(`btn-check-${qIndex}`);
-    btnCheck.disabled = false;
+    const btnCheck = document.getElementById(`check-btn-${qIndex}`);
+    if (btnCheck) btnCheck.disabled = false;
     
     updateNavGridSelection();
 };
